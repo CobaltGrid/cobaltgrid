@@ -4,8 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Contact = props => {
-  const [topic, setTopic] = useState(props.location.state.topic ?? null)
-  const [body, setBody] = useState(props.location.state.body ?? null)
+  const [topic, setTopic] = useState((props.location.state && props.location.state.topic) ? props.location.state.topic : null)
+  const [body, setBody] = useState((props.location.state && props.location.state.body) ?  props.location.state.body : null)
 
   return (
     <Layout>
