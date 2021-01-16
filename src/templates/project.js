@@ -1,0 +1,122 @@
+import React from "react"
+import { graphql } from "gatsby"
+import Image from "gatsby-image"
+
+import Slider from "../components/ui/slider"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        name
+        excerpt
+        tech
+        images_container_class
+        feature_image {
+          childImageSharp {
+            fixed(width: 600) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        slider {
+          childImageSharp {
+            fluid(maxWidth: 1500) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+          }
+        }
+        images {
+          childImageSharp {
+            fluid(maxWidth: 1500) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
+            }
+          }
+        }
+      }
+      html
+    }
+  }
+`
+
+const Project = ({ data }) => {
+  const project = data.markdownRemark
+  return (
+    <Layout>
+      <SEO title={`${project.frontmatter.name}`} />
+      <div className="container">
+        <div className="flex flex-wrap -mx2">
+          <div className="flex flex-col items-center w-full md:w-1/2 px-2">
+            <Image
+              imgStyle={{ objectFit: "contain" }}
+              style={{ maxWidth: "500px" }}
+              className="my-auto w-full"
+              fixed={project.frontmatter.feature_image.childImageSharp.fixed}
+              alt={`${project.frontmatter.name} Feature Image`}
+            />
+          </div>
+          <div className="w-full md:w-1/2">
+            <h1>{project.frontmatter.name}</h1>
+            <p className="text-cobalt-gray font-display">
+              {project.frontmatter.excerpt}
+            </p>
+
+            {project.frontmatter.tech && (
+              <div className="mt-5">
+                <h4 className="text-gray-400 tracking-widest font-bold">
+                  TECHNOLOGY
+                </h4>
+                <div className="mt-2">
+                  {project.frontmatter.tech.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="rounded-full py-2 px-4 bg-gray-300 mr-2 text-cobalt-gray"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap -mx2 mt-8">
+          <div
+            className="w-full md:w-1/2 px-2 font-display"
+            dangerouslySetInnerHTML={{ __html: project.html }}
+          ></div>
+          <div className="w-full md:w-1/2 px-2 mb-2">
+            {project.frontmatter.slider && (
+              <Slider images={project.frontmatter.slider} />
+            )}
+            {project.frontmatter.images &&
+              project.frontmatter.images.map((image, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`w-full relative ${index > 0 ? "mt-10" : ""}`}
+                  >
+                    <div className="aspect-ratio-16/9" />
+                    <div className="absolute left-0 right-0 w-full my-auto top-0 bottom-0 shadow-2xl">
+                      <Image
+                        fluid={image.childImageSharp.fluid}
+                        style={{ position: "initial" }}
+                        imgStyle={{ objectFit: "contain" }}
+                      />
+                    </div>
+                  </div>
+                )
+              })}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
+}
+
+export default Project
