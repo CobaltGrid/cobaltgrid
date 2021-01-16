@@ -45,6 +45,7 @@ const IndexPage = () => {
   `)
 
   const onUserTypeChange = e => {
+    if (!e.target.value) return
     let sizer = document.querySelector("#hiddenSelectSizer")
     sizer.classList.toggle("hidden")
     document.querySelector("#hiddenSelectSizer option").innerHTML =
@@ -55,6 +56,7 @@ const IndexPage = () => {
   }
 
   const onUserPurposeChange = e => {
+    if (!e.target.value) return
     let sizer = document.querySelector("#hiddenSelectSizer")
     sizer.classList.toggle("hidden")
     document.querySelector("#hiddenSelectSizer option").innerHTML =
@@ -127,7 +129,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <section className="text-center mt-8 container">
+        <section className="text-center my-16 container">
           <div>
             <h2 className="h-lined">Featured Work</h2>
           </div>
@@ -137,8 +139,9 @@ const IndexPage = () => {
             })}
           </div>
         </section>
-        <section className="text-center mt-8 container bg-cobalt-bright text-white border-8 border-cobalt-primary border-dashed">
-          <h1>
+        <section className="my-16 text-center container">
+            <h2 className="h-lined mb-6">How can we help?</h2>
+          <div className="bg-cobalt-bright text-white border-8 border-cobalt-primary border-dashed"><h1>
             I'm a
             <select
               className={`bg-cobalt-primary focus:outline-none mx-2 ${
@@ -214,10 +217,10 @@ const IndexPage = () => {
                 Get In Touch
               </Link>
             </div>
-          )}
+          )}</div>
         </section>
 
-        <section className="text-center container mt-8">
+        <section className="text-center container my-16">
           <div>
             <h2 className="h-lined">What we offer</h2>
           </div>

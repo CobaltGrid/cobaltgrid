@@ -15,7 +15,7 @@ let stories = [
       {
         name: "allow our customers to talk to us",
         text:
-          "We can help you engage your customers. Barber who wants to take appointments online? No problem! Need a portal to allow land users to report faults? We have the perfect solution! With an experience in creating functional sites, we will work with you to craft a helpful application that easily integrates into your existing operation.",
+          "We can help you engage your customers. Barber who wants to take appointments online? No problem! Need a portal to allow land users to report faults? We have the perfect solution! With experience in creating functional sites, we will work with you to craft a helpful application that easily integrates into your existing operation.",
       },
     ],
   },

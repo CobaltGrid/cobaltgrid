@@ -29,7 +29,9 @@ function Header() {
             />
           </Link>
         </div>
-        <button id="nav-toggle" className="block lg:hidden">
+        <button id="nav-toggle" className="block lg:hidden" onClick={() => {
+          document.querySelector('#nav-content').classList.toggle('hidden')
+        }}>
           <svg
             className="fill-current h-6 w-6"
             viewBox="0 0 20 20"

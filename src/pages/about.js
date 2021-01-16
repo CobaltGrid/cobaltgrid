@@ -44,16 +44,11 @@ const About = () => {
               I have been creating websites, programs, widgets and more for over
               5 years now. From online communities and groups, to portfolio and
               business sites, and even medical devices and applications, I have
-              been involved in a
-              <Link className="text-cobalt-bright" to="/projects">
-                {" "}
-                wide range of projects
-              </Link>
-              .
+              been involved in a wide range of projects across varied sectors and purposes.
             </p>
             <p>
               My experience mainly lies in web development, crafting elegant web
-              pages and functional applications.
+              pages and functional applications that are a perfect match to help my client's business, project or community thrive.
             </p>
             <p className="pb-0">
               Check out our{" "}

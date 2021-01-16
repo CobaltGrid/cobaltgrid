@@ -5,7 +5,6 @@ import Image from "gatsby-image"
 import Slider from "../components/ui/slider"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
@@ -16,8 +15,8 @@ export const query = graphql`
         images_container_class
         feature_image {
           childImageSharp {
-            fixed(width: 600) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -50,12 +49,12 @@ const Project = ({ data }) => {
       <SEO title={`${project.frontmatter.name}`} />
       <div className="container">
         <div className="flex flex-wrap -mx2">
-          <div className="flex flex-col items-center w-full md:w-1/2 px-2">
+          <div className="flex items-center w-full md:w-1/2 px-2">
             <Image
               imgStyle={{ objectFit: "contain" }}
               style={{ maxWidth: "500px" }}
               className="my-auto w-full"
-              fixed={project.frontmatter.feature_image.childImageSharp.fixed}
+              fluid={project.frontmatter.feature_image.childImageSharp.fluid}
               alt={`${project.frontmatter.name} Feature Image`}
             />
           </div>
