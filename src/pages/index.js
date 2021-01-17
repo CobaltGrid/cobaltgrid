@@ -69,7 +69,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Cobalt Grid | Digital Development Services" />
-      <div className="bg-gray-200 h-full pb-4">
+      <div className="bg-gray-200 pb-4">
         <section
           style={{
             height: "70vh",
@@ -108,7 +108,8 @@ const IndexPage = () => {
             </h1>
             <h3 className="container text-cobalt-primary mt-10 sm:mt-32">
               Cobalt Grid is a web and digital design consultancy, experienced
-              in creating unique and functional digital experiences to help deliver digital success
+              in creating unique and functional digital experiences to help
+              deliver digital success
             </h3>
           </div>
         </section>
@@ -122,7 +123,10 @@ const IndexPage = () => {
             </Link>
           </div>
           <div>
-            <Link className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary" to="contact">
+            <Link
+              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary"
+              to="contact"
+            >
               <span className="fa fa-envelope"></span> Get In Touch
             </Link>
           </div>
@@ -139,95 +143,105 @@ const IndexPage = () => {
           </div>
         </section>
         <section className="py-16 text-center bg-cobalt-mud">
-            <h2 className="h-lined mb-6 text-white">How can we help?</h2>
-          <div className="text-white container"><h1>
-            {/* eslint-disable */}
-            I'm a
-            <select
-              className={`bg-cobalt-primary focus:outline-none mx-2 ${
-                userType ? "" : "animate-pulse"
-              }`}
-              style={{ fontSize: "80%" }}
-              value={userType}
-              aria-label="I'm a"
-              onChange={onUserTypeChange}
-              onBlur={onUserTypeChange}
-            >
-              <option disabled value=""></option>
-              {UserStories.map((user, index) => {
-                return (
-                  <option key={index} value={user.name}>
-                    {user.name}
-                  </option>
-                )
-              })}
-            </select>
-            {userType && (
-              <span className="fade-in">
-                , looking to
-                <select
-                  className={`bg-cobalt-primary focus:outline-none mx-2 max-w-full ${
-                    userPurpose ? "" : "animate-pulse"
-                  }`}
-                  style={{ fontSize: "80%" }}
-                  value={userPurpose}
-                  aria-label="What are you looking to do?"
-                  onChange={onUserPurposeChange}
-                  onBlur={onUserPurposeChange}
-                >
-                  <option disabled value=""></option>
-                  {UserStories.find(
-                    user => user.name === userType
-                  ).purposes.map((purpose, index) => {
-                    return (
-                      <option key={index} value={purpose.name}>
-                        {purpose.name}
-                      </option>
-                    )
-                  })}
-                </select>
-              </span>
-            )}
-            <select
-              id="hiddenSelectSizer"
-              className="hidden"
-              aria-label="Do not use"
-              style={{ fontSize: "80%" }}
-            >
-              <option></option>
-            </select>
-            {/* eslint-enable */}
-          </h1>
-
-          {userPurpose && (
-            <div className="fade-in bg-cobalt-bright border-8 border-cobalt-primary border-dashed my-4 p-4 text-2xl">
-              {
-                UserStories.find(user => user.name === userType).purposes.find(
-                  purpose => purpose.name === userPurpose
-                ).text
-              }
-              <hr className="my-4" />
-              <p className="text-3xl font-semibold mb-0">
-                We'd love to work with you
-              </p>
-              <Link
-                className="btn text-white border-2 hover:bg-cobalt-primary text-2xl"
-                to="contact"
-                state={{ topic: "proposal" }}
+          <h2 className="h-lined mb-6 text-white">How can we help?</h2>
+          <div className="text-white container">
+            <h1>
+              {/* eslint-disable */}
+              I'm a
+              <select
+                className={`bg-cobalt-primary focus:outline-none mx-2 ${
+                  userType ? "" : "animate-pulse"
+                }`}
+                style={{ fontSize: "80%" }}
+                value={userType}
+                aria-label="I'm a"
+                onChange={onUserTypeChange}
+                onBlur={onUserTypeChange}
               >
-                Get In Touch
-              </Link>
-            </div>
-          )}</div>
+                <option disabled value=""></option>
+                {UserStories.map((user, index) => {
+                  return (
+                    <option key={index} value={user.name}>
+                      {user.name}
+                    </option>
+                  )
+                })}
+              </select>
+              {userType && (
+                <span className="fade-in leading-tight">
+                  , looking to
+                  <select
+                    className={`bg-cobalt-primary focus:outline-none mx-2 max-w-full ${
+                      userPurpose ? "" : "animate-pulse"
+                    }`}
+                    style={{ fontSize: "80%" }}
+                    value={userPurpose}
+                    aria-label="What are you looking to do?"
+                    onChange={onUserPurposeChange}
+                    onBlur={onUserPurposeChange}
+                  >
+                    <option disabled value=""></option>
+                    {UserStories.find(
+                      user => user.name === userType
+                    ).purposes.map((purpose, index) => {
+                      return (
+                        <option key={index} value={purpose.name}>
+                          {purpose.name}
+                        </option>
+                      )
+                    })}
+                  </select>
+                </span>
+              )}
+              <select
+                id="hiddenSelectSizer"
+                className="hidden"
+                aria-label="Do not use"
+                style={{ fontSize: "80%" }}
+              >
+                <option></option>
+              </select>
+              {/* eslint-enable */}
+            </h1>
+
+            {userPurpose && (
+              <div className="fade-in bg-cobalt-bright border-8 border-cobalt-primary border-dashed my-4 p-4 text-2xl">
+                {
+                  UserStories.find(
+                    user => user.name === userType
+                  ).purposes.find(purpose => purpose.name === userPurpose).text
+                }
+                <hr className="my-4" />
+                <p className="text-3xl font-semibold mb-0">
+                  We'd love to work with you
+                </p>
+                <Link
+                  className="btn text-white border-2 hover:bg-cobalt-primary text-2xl"
+                  to="contact"
+                  state={{ topic: "proposal" }}
+                >
+                  Get In Touch
+                </Link>
+              </div>
+            )}
+          </div>
         </section>
 
-        <section className="text-center container my-16">
+        <section className="text-center container my-16 px-3">
           <div>
             <h2 className="h-lined">What we offer</h2>
             <p className="mt-4">
-              We provide tailored services that are dependant on your exact needs. If you are just looking for someone to assist with infrastructure, we'd be happy to help you in any way we can, supplying ready-to-go servers and systems, or designing a custom architecture for optimal performance.
-               Equally, we're experienced in the full development cycle, from start to finish and beyond. We can be with you every step of the way, from initial ideation and creative design,
-              development and testing, through to deployment, support and maintainance. 
+              We provide tailored services that are dependant on your exact
+              needs. If you are just looking for someone to assist with
+              infrastructure, we'd be happy to help you in any way we can,
+              supplying ready-to-go servers and systems, or designing a custom
+              architecture for optimal performance.
+            </p>
+            <p>
+              Equally, we're experienced in the full development cycle, from
+              start to finish and beyond. We can be with you every step of the
+              way, from initial ideation and creative design, development and
+              testing, through to deployment, support and maintainance.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">

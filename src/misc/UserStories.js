@@ -8,7 +8,7 @@ let stories = [
           "We can help you setup your digital store front. Using modern tools including SEO, we can ensure your shop is easily found by new and exisiting customers alike. Using ready-to-go solutions such as Shopify, you can be up and running taking new orders in days, not months.",
       },
       {
-        name: "expand our online presense",
+        name: "expand our online presence",
         text:
           "We can help you reach new customers. Whether you're a restaurant, timber merchant or local event, using modern approaches to web design, we can help design the perfect site to tell your story and promote your products or services across the internet. We can even help you with social media, too!",
       },
@@ -46,11 +46,13 @@ let stories = [
   },
   {
     name: "innovator",
-    purposes: [{
+    purposes: [
+      {
         name: "create a bespoke application",
         text:
           "We can help work on a custom application for you. Some of our previous, most successful projects have been bespoke functional apps. We have made these for a variety of sectors, including for medical and healthcare purposes. We understand the focus on functionality and ease of management in these applications, as well as compliance against any appropriate standards. We have experience completing projects to variety of standards, including CE mark and UK Class 1 medical device standards such as IEC 62304.",
-      },],
+      },
+    ],
   },
 ]
 

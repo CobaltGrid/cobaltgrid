@@ -26,6 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
       {
         projects: allMarkdownRemark(
           filter: { fields: { sourceName: { eq: "project" } } }
+          limit: 12
         ) {
           edges {
             node {

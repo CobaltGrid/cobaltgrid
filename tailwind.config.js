@@ -27,6 +27,8 @@ module.exports = {
         "cobalt-primary": "#006F7F",
         "cobalt-mud": "#393939",
         "cobalt-gray": "#838383",
+        "teal-700": "#2c7a7b",
+        "gray-200": "#edf2f7",
       },
     },
   },

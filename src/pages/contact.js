@@ -4,8 +4,16 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Contact = props => {
-  const [topic, setTopic] = useState((props.location.state && props.location.state.topic) ? props.location.state.topic : null)
-  const [body, setBody] = useState((props.location.state && props.location.state.body) ?  props.location.state.body : null)
+  const [topic, setTopic] = useState(
+    props.location.state && props.location.state.topic
+      ? props.location.state.topic
+      : null
+  )
+  const [body, setBody] = useState(
+    props.location.state && props.location.state.body
+      ? props.location.state.body
+      : null
+  )
 
   return (
     <Layout>
@@ -37,11 +45,11 @@ const Contact = props => {
           >
             <label>
               <div className="text-left text-2xl">Name</div>
-              <input name="name" type="text" />
+              <input name="name" type="text" required />
             </label>
             <label>
               <div className="text-left text-2xl mt-4">Email</div>
-              <input name="_replyto" type="text" />
+              <input name="_replyto" type="email" required />
             </label>
             <label>
               <div className="text-left text-2xl mt-4">Message</div>
@@ -50,6 +58,7 @@ const Contact = props => {
                 value={body ?? ""}
                 onChange={e => setBody(e.target.value)}
                 rows="4"
+                required
               ></textarea>
             </label>
             <button
@@ -70,16 +79,16 @@ const Contact = props => {
           >
             <label>
               <div className="text-left text-2xl">Name</div>
-              <input name="name" type="text" />
+              <input name="name" type="text" required />
             </label>
             <label>
-              <div className="text-left text-2xl">Email</div>
-              <input name="_replyto" type="text" />
+              <div className="text-left text-2xl mt-4">Email</div>
+              <input name="_replyto" type="email" required />
             </label>
             <label>
               <div className="text-left text-2xl mt-4">Project Type</div>
-              <select name="project_type">
-                <option value="" disabled>
+              <select name="project_type" required>
+                <option value="" disabled selected>
                   Select one...
                 </option>
                 <option value="Blog">Blog</option>
@@ -100,6 +109,7 @@ const Contact = props => {
                 name="vision"
                 rows="4"
                 placeholder="e.g. What are you looking for? How can we help you?"
+                required
               ></textarea>
             </label>
             <label>
@@ -109,7 +119,7 @@ const Contact = props => {
               <textarea
                 name="misc-info"
                 rows="4"
-                placeholder="e.g. Link to a formal RFP or similar"
+                placeholder="e.g. Link to a RFP or similar"
               ></textarea>
             </label>
             <button

@@ -16,19 +16,19 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col font-body">
       <Header />
-      <div className="flex-grow-1 flex-auto">{children}</div>
+      <div className="flex-grow flex flex-col">{children}</div>
 
       <section className="bg-cobalt-mud h-16 text-white">
-        <div className="grid grid-cols-2 container h-full font-display">
-          <div className="inline-block my-auto">
+        <div className="flex container items-center px-3 h-full font-display">
+          <div>
             &copy; 2020 Alexander Toff trading as Cobalt Grid
           </div>
-          <div className="inline-block my-auto text-right">
+          <div className="text-right ml-auto">
             <ul>
-              <li className="inline-block p-3">
+              <li className="inline-block p-1 sm:p-3">
                 <Link to="/about">About</Link>
               </li>
-              <li className="inline-block p-3">
+              <li className="inline-block p-1 sm:p-3">
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>

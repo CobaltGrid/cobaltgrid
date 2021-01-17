@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <nav className="w-full mx-auto bg-white">
-      <div className="container flex flex-wrap items-center justify-between sm:px-16 py-2">
+      <div className="container flex flex-wrap items-center justify-between sm:px-16 py-2 px-3">
         <div className="h-12 flex-grow">
           <Link to="/">
             <Img
@@ -29,9 +29,13 @@ function Header() {
             />
           </Link>
         </div>
-        <button id="nav-toggle" className="block lg:hidden" onClick={() => {
-          document.querySelector('#nav-content').classList.toggle('hidden')
-        }}>
+        <button
+          id="nav-toggle"
+          className="block lg:hidden"
+          onClick={() => {
+            document.querySelector("#nav-content").classList.toggle("hidden")
+          }}
+        >
           <svg
             className="fill-current h-6 w-6"
             viewBox="0 0 20 20"

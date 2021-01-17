@@ -44,11 +44,13 @@ const About = () => {
               I have been creating websites, programs, widgets and more for over
               8 years now. From online communities and groups, to portfolio and
               business sites, and even medical devices and applications, I have
-              been involved in a wide range of projects for clients from multiple sectors.
+              been involved in a wide range of projects for clients from
+              multiple sectors.
             </p>
             <p>
               My experience mainly lies in web development, crafting elegant web
-              pages and functional applications that are a perfect match to help my client's business, project or community thrive.
+              pages and functional applications that are a perfect match to help
+              my client's business, project or community thrive.
             </p>
             <p className="pb-0">
               Check out our{" "}
@@ -75,6 +77,7 @@ const About = () => {
               style={{ borderRadius: "1rem" }}
               placeholder=""
               contentEditable="true"
+              suppressContentEditableWarning={true}
               onInput={event => setMessage(event.target.innerText)}
             >
               Hi Alex, ...
@@ -99,7 +102,7 @@ const About = () => {
               impression for you or your business on the web.
             </p>
             Our experience lies in:
-            <ul class="list-disc ml-6">
+            <ul className="list-disc ml-6">
               <li>API & Backend Development</li>
               <li>Bespoke web applications</li>
               <li>Content Management Systems and Forums</li>
