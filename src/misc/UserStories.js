@@ -46,7 +46,11 @@ let stories = [
   },
   {
     name: "innovator",
-    purposes: [],
+    purposes: [{
+        name: "create a bespoke application",
+        text:
+          "We can help work on a custom application for you. Some of our previous, most successful projects have been bespoke functional apps. We have made these for a variety of sectors, including for medical and healthcare purposes. We understand the focus on functionality and ease of management in these applications, as well as compliance against any appropriate standards. We have experience completing projects to variety of standards, including CE mark and UK Class 1 medical device standards such as IEC 62304.",
+      },],
   },
 ]
 

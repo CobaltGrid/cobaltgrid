@@ -31,10 +31,10 @@ module.exports = {
         name: `cobaltgrid`,
         short_name: `cobaltgrid`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#006F7F`,
+        theme_color: `#00B5FF`,
         display: `minimal-ui`,
-        icon: `src/images/logo-wide.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo-icon-square.png`, // This path is relative to the root of the site.
       },
     },
     /*
@@ -88,7 +88,6 @@ module.exports = {
     //     enabled: (() => ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)()
     //   }
     // },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {

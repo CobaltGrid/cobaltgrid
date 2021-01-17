@@ -108,22 +108,21 @@ const IndexPage = () => {
             </h1>
             <h3 className="container text-cobalt-primary mt-10 sm:mt-32">
               Cobalt Grid is a web and digital design consultancy, experienced
-              in creating unique digital experiences that accelerate your
-              business and digital profile
+              in creating unique and functional digital experiences to help deliver digital success
             </h3>
           </div>
         </section>
         <div className="container flex justify-evenly">
           <div>
             <Link
-              className="btn text-white bg-cobalt-bright hover:bg-teal-700"
+              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary"
               to="/recent-projects"
             >
               <span className="fa fa-folder"></span> Recent Projects
             </Link>
           </div>
           <div>
-            <Link className="btn text-white bg-cobalt-bright" to="contact">
+            <Link className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary" to="contact">
               <span className="fa fa-envelope"></span> Get In Touch
             </Link>
           </div>
@@ -139,9 +138,10 @@ const IndexPage = () => {
             })}
           </div>
         </section>
-        <section className="my-16 text-center container">
-            <h2 className="h-lined mb-6">How can we help?</h2>
-          <div className="bg-cobalt-bright text-white border-8 border-cobalt-primary border-dashed"><h1>
+        <section className="py-16 text-center bg-cobalt-mud">
+            <h2 className="h-lined mb-6 text-white">How can we help?</h2>
+          <div className="text-white container"><h1>
+            {/* eslint-disable */}
             I'm a
             <select
               className={`bg-cobalt-primary focus:outline-none mx-2 ${
@@ -196,10 +196,11 @@ const IndexPage = () => {
             >
               <option></option>
             </select>
+            {/* eslint-enable */}
           </h1>
 
           {userPurpose && (
-            <div className="fade-in bg-cobalt-primary my-4 p-4 text-2xl">
+            <div className="fade-in bg-cobalt-bright border-8 border-cobalt-primary border-dashed my-4 p-4 text-2xl">
               {
                 UserStories.find(user => user.name === userType).purposes.find(
                   purpose => purpose.name === userPurpose
@@ -210,7 +211,7 @@ const IndexPage = () => {
                 We'd love to work with you
               </p>
               <Link
-                className="btn text-white border-2 hover:bg-cobalt-bright text-2xl"
+                className="btn text-white border-2 hover:bg-cobalt-primary text-2xl"
                 to="contact"
                 state={{ topic: "proposal" }}
               >
@@ -223,8 +224,13 @@ const IndexPage = () => {
         <section className="text-center container my-16">
           <div>
             <h2 className="h-lined">What we offer</h2>
+            <p className="mt-4">
+              We provide tailored services that are dependant on your exact needs. If you are just looking for someone to assist with infrastructure, we'd be happy to help you in any way we can, supplying ready-to-go servers and systems, or designing a custom architecture for optimal performance.
+               Equally, we're experienced in the full development cycle, from start to finish and beyond. We can be with you every step of the way, from initial ideation and creative design,
+              development and testing, through to deployment, support and maintainance. 
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
                 <span className="fa fa-tools"></span>
@@ -267,7 +273,7 @@ const IndexPage = () => {
           </div>
           <div className="text-center w-full mt-2">
             <Link
-              className="btn border-2 border-cobalt-bright hover:bg-cobalt-bright text-2xl"
+              className="text-white btn bg-cobalt-bright text-2xl hover:bg-cobalt-primary"
               to="about"
             >
               Find out more

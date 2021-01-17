@@ -33,7 +33,7 @@ const About = () => {
             />
           </div>
           <div
-            className="bg-cobalt-primary text-white ml-12 text-display p-6 pl-12 text-xl"
+            className="bg-cobalt-primary text-white ml-12 text-display p-6 pl-12 text-xl font-display"
             style={{ borderRadius: "3rem" }}
           >
             <p>
@@ -42,9 +42,9 @@ const About = () => {
             </p>
             <p>
               I have been creating websites, programs, widgets and more for over
-              5 years now. From online communities and groups, to portfolio and
+              8 years now. From online communities and groups, to portfolio and
               business sites, and even medical devices and applications, I have
-              been involved in a wide range of projects across varied sectors and purposes.
+              been involved in a wide range of projects for clients from multiple sectors.
             </p>
             <p>
               My experience mainly lies in web development, crafting elegant web

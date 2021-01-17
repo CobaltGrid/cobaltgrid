@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default function ProjectCard(props) {
-  console.log(props)
   return (
     <div className="project-card">
       <Link to={`/project/${props.project.slug}`}>
@@ -15,7 +14,7 @@ export default function ProjectCard(props) {
               className="absolute left-0 top-0 w-full h-full object-contain"
             />
           </div>
-          <div className="project-details absolute left-0 top-0 w-full h-full bg-cobalt-mud text-white flex items-center text-lg">
+          <div className="project-details absolute left-0 top-0 w-full h-full bg-cobalt-mud text-white flex items-center text-lg p-2">
             {props.project.excerpt}
           </div>
         </div>

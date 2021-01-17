@@ -101,7 +101,7 @@ const Project = ({ data }) => {
                     className={`w-full relative ${index > 0 ? "mt-10" : ""}`}
                   >
                     <div className="aspect-ratio-16/9" />
-                    <div className="absolute left-0 right-0 w-full my-auto top-0 bottom-0 shadow-2xl">
+                    <div className="absolute left-0 right-0 w-full my-auto top-0 bottom-0 shadow-lg">
                       <Image
                         fluid={image.childImageSharp.fluid}
                         style={{ position: "initial" }}

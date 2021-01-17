@@ -14,7 +14,7 @@ import Header from "./header"
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col font-body">
       <Header />
       <div className="flex-grow-1 flex-auto">{children}</div>
 
