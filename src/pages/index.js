@@ -8,6 +8,10 @@ import Typewriter from "typewriter-effect"
 
 import UserStories from "../misc/UserStories"
 
+import ImageSetup from "../images/setup.svg"
+import ImageDevelopment from "../images/development.svg"
+import ImageSupport from "../images/support.svg"
+
 const IndexPage = () => {
   const [userType, setUserType] = useState("")
   const [userPurpose, setUserPurpose] = useState("")
@@ -228,7 +232,7 @@ const IndexPage = () => {
         </section>
 
         <section className="text-center container my-16 px-3">
-          <div>
+          <div className="container">
             <h2 className="h-lined">What we offer</h2>
             <p className="mt-4">
               We provide tailored services that are dependant on your exact
@@ -247,7 +251,7 @@ const IndexPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
-                <span className="fa fa-tools"></span>
+                <img src={ImageSetup} className="w-full mx-auto" style={{maxWidth: "300px", height: "200px"}} alt=""/>
               </div>
               <h3>Setup</h3>
               <div className="inline-block">
@@ -260,7 +264,7 @@ const IndexPage = () => {
             </div>
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
-                <span className="fa fa-code"></span>
+                <img src={ImageDevelopment} className="w-full mx-auto" style={{maxWidth: "300px", height: "200px"}} alt=""/>
               </div>
               <h3>Development</h3>
               <div className="inline-block">
@@ -273,7 +277,7 @@ const IndexPage = () => {
             </div>
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
-                <span className="fa fa-headset"></span>
+                <img src={ImageSupport} className="w-full mx-auto" style={{maxWidth: "300px", height: "200px"}} alt=""/>
               </div>
               <h3>Support</h3>
               <div className="inline-block">
