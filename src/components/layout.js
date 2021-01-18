@@ -16,12 +16,13 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col font-body">
       <Header />
-      <div className="flex-grow flex flex-col">{children}</div>
+      <div className="flex flex-col flex-grow">{children}</div>
 
       <section className="bg-cobalt-mud h-16 text-white">
         <div className="flex container items-center px-3 h-full font-display">
           <div>
-            &copy; 2020 Alexander Toff trading as Cobalt Grid
+            &copy; {new Date().getFullYear()} Alexander Toff trading as Cobalt
+            Grid
           </div>
           <div className="text-right ml-auto">
             <ul>

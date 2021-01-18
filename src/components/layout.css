@@ -90,11 +90,11 @@ ul.list-tick li:before {
 
 .contact-form input,
 .contact-form select {
-  @apply block bg-blue-600 w-full h-12 px-4;
+  @apply block bg-blue-600 w-full h-12 px-4 focus:outline-none;
 }
 
 .contact-form textarea {
-  @apply block bg-blue-600 w-full px-4 pt-4;
+  @apply block bg-blue-600 w-full px-4 pt-4 focus:outline-none;
 }
 
 @tailwind components;
