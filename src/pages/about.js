@@ -166,8 +166,8 @@ const About = () => {
             </ul>
           </div>
           <div className="w-full md:w-1/2 p-4">
-            <h2>Skills</h2>I have worked with a wide variety of technologies,
-            with my most common ones listed below.
+            <h2>Technology</h2>I have worked with a wide variety of
+            technologies, with my most common ones listed below.
             <ul className="mt-4">
               {skills.map(skillset => {
                 return (
