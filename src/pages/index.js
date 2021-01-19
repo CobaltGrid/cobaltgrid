@@ -251,7 +251,12 @@ const IndexPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
-                <img src={ImageSetup} className="w-full mx-auto" style={{maxWidth: "300px", height: "200px"}} alt=""/>
+                <img
+                  src={ImageSetup}
+                  className="w-full mx-auto"
+                  style={{ maxWidth: "300px", height: "200px" }}
+                  alt=""
+                />
               </div>
               <h3>Setup</h3>
               <div className="inline-block">
@@ -264,7 +269,12 @@ const IndexPage = () => {
             </div>
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
-                <img src={ImageDevelopment} className="w-full mx-auto" style={{maxWidth: "300px", height: "200px"}} alt=""/>
+                <img
+                  src={ImageDevelopment}
+                  className="w-full mx-auto"
+                  style={{ maxWidth: "300px", height: "200px" }}
+                  alt=""
+                />
               </div>
               <h3>Development</h3>
               <div className="inline-block">
@@ -277,7 +287,12 @@ const IndexPage = () => {
             </div>
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
-                <img src={ImageSupport} className="w-full mx-auto" style={{maxWidth: "300px", height: "200px"}} alt=""/>
+                <img
+                  src={ImageSupport}
+                  className="w-full mx-auto"
+                  style={{ maxWidth: "300px", height: "200px" }}
+                  alt=""
+                />
               </div>
               <h3>Support</h3>
               <div className="inline-block">

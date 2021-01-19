@@ -10,11 +10,8 @@ const IndexPage = () => {
     query {
       recentProjects: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 9
-        filter: {
-          fields: { sourceName: { eq: "project" } }
-          frontmatter: { featured: { eq: true } }
-        }
+        limit: 12
+        filter: { fields: { sourceName: { eq: "project" } } }
       ) {
         edges {
           node {

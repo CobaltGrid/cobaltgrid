@@ -12,7 +12,6 @@ export const query = graphql`
         name
         excerpt
         tech
-        images_container_class
         feature_image {
           childImageSharp {
             fluid(maxWidth: 600) {
@@ -52,7 +51,7 @@ const Project = ({ data }) => {
           <div className="flex items-center w-full md:w-1/2 px-2">
             <Image
               imgStyle={{ objectFit: "contain" }}
-              style={{ maxWidth: "500px" }}
+              style={{ maxWidth: "500px", maxHeight: "200px" }}
               className="my-auto w-full"
               fluid={project.frontmatter.feature_image.childImageSharp.fluid}
               alt={`${project.frontmatter.name} Feature Image`}
@@ -84,12 +83,12 @@ const Project = ({ data }) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap -mx2 mt-8">
+        <div className="flex flex-wrap lg:flex-nowrap -mx2 mt-8">
           <div
-            className="w-full md:w-1/2 px-2 font-display"
+            className="w-full flex-grow px-2 font-display"
             dangerouslySetInnerHTML={{ __html: project.html }}
           ></div>
-          <div className="w-full md:w-1/2 px-2 mb-2">
+          <div className="w-full lg:w-1/2 px-2 mb-2 flex-none">
             {project.frontmatter.slider && (
               <Slider images={project.frontmatter.slider} />
             )}
@@ -104,7 +103,11 @@ const Project = ({ data }) => {
                     <div className="absolute left-0 right-0 w-full my-auto top-0 bottom-0 shadow-lg">
                       <Image
                         fluid={image.childImageSharp.fluid}
-                        style={{ position: "initial" }}
+                        style={{
+                          position: "initial",
+                          height: "100%",
+                          width: "100%",
+                        }}
                         imgStyle={{ objectFit: "contain" }}
                       />
                     </div>

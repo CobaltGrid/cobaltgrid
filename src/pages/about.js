@@ -6,6 +6,13 @@ import DevStage from "../components/ui/dev-stage"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
+import ImageInitialContact from "../images/about/inital_contact.svg"
+import ImageProposal from "../images/about/proposal.svg"
+import ImageDiscovery from "../images/about/discovery.svg"
+import ImageDevelopment from "../images/about/development.svg"
+import ImageDeployment from "../images/about/deployment.svg"
+import ImageSupport from "../images/about/support2.svg"
+
 const About = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -18,6 +25,42 @@ const About = () => {
       }
     }
   `)
+
+  const skills = [
+    {
+      bgcolor: "#3b7653",
+      items: [
+        "HTML",
+        "CSS",
+        "SCSS",
+        "Less",
+        "Sass",
+        "Tailwind",
+        "Bootstrap",
+        "Bulma",
+      ],
+    },
+    {
+      bgcolor: "#cdc348",
+      items: ["Javascript", "Vue.js", "React"],
+    },
+    {
+      bgcolor: "#8993be",
+      items: ["PHP", "Laravel", "Wordpress"],
+    },
+    {
+      bgcolor: "#F29111",
+      items: ["MySQL", "PostgreSQL", "GraphQL"],
+    },
+    {
+      bgcolor: "#4584b6",
+      items: ["Python", "Django"],
+    },
+    {
+      bgcolor: "#00a4e4",
+      items: ["Adobe Creative Suite"],
+    },
+  ]
 
   const [message, setMessage] = useState("")
 
@@ -41,11 +84,11 @@ const About = () => {
               business.
             </p>
             <p>
-              I have been creating websites, programs, widgets and more for over
-              8 years now. From online communities and groups, to portfolio and
-              business sites, and even medical devices and applications, I have
-              been involved in a wide range of projects for clients from
-              multiple sectors.
+              I have been creating websites, programs, widgets and more
+              professionally since 2013. From online communities and groups, to
+              portfolio and business sites, and even medical devices and
+              applications, I have been involved in a wide range of projects for
+              clients from multiple sectors.
             </p>
             <p>
               My experience mainly lies in web development, crafting elegant web
@@ -93,72 +136,138 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-cobalt-mud">
-        <div className="container pt-6 text-white">
-          <div className="px-10">
-            <h2>What can we do for you?</h2>
+      <div className="bg-cobalt-mud text-white pt-6">
+        <div className="container flex flex-wrap">
+          <div className="w-full md:w-1/2 p-4">
+            <h2>Experience</h2>
             <p>
-              We offer lots of services, designed to make create the perfect
-              impression for you or your business on the web.
+              I pride myself in the varied projects I have worked on, and as a
+              result of this I have a large amount of experience in tailoring my
+              web design work to the needs of a project.
             </p>
-            Our experience lies in:
-            <ul className="list-disc ml-6">
-              <li>API & Backend Development</li>
-              <li>Bespoke web applications</li>
-              <li>Content Management Systems and Forums</li>
-              <li>Infrastructure management and setup</li>
-              <li>Graphics and design</li>
-              <li>Scaleable systems and processes</li>
+            My main experience lies in:
+            <ul>
+              <li className="tag bg-cobalt-primary">
+                API & Backend Development
+              </li>
+              <li className="tag bg-cobalt-primary">
+                Bespoke, functional web applications
+              </li>
+              <li className="tag bg-cobalt-primary">
+                Content Management Systems and Forums
+              </li>
+              <li className="tag bg-cobalt-primary">
+                Infrastructure management and setup
+              </li>
+              <li className="tag bg-cobalt-primary">Graphics and Design</li>
+              <li className="tag bg-cobalt-primary">
+                Scaleable systems and Processes
+              </li>
             </ul>
-            <h2 className="mt-4">What do you get?</h2>
-            <p>
-              We work hard to ensure that you get exactly the right solution for
-              your specific purpose. By choosing Cobalt Grid, you are choosing a
-              developer who cares about their work and the outcome from the
-              project. Unlike many other agencies, we won't charge extreme fees
-              for nit-picky things here and there; we will be as invested in
-              your project as you are.
-            </p>
-            <p>Here is what you can expect from start to finish:</p>
-            <div className="space-y-4">
-              <DevStage name="Initial Contact" number="1">
-                Once you get in contact with us, we'll schedule a chat to
-                discuss your ideas and project in more detail, taking a look
-                over anything you have done previously and the end goals for
-                your project with us.
-              </DevStage>
-              <DevStage name="Proposal" number="2">
-                After we are happy we understand what you are looking for, we
-                will write you a detailed propsal detailing our plan to fulfil
-                your goals. This will include the financal and legal bits of
-                course, but most importantly it will outline what the final
-                product will be able to do, and timeline for deliverables and
-                demos. After you accept this, we can get started on crafting the
-                perfect solution for you.
-              </DevStage>
-              <DevStage name="In-Development" number="3">
-                During the development process, we will hold frequent meetings
-                and demos with you, to demonstrate the current progress and
-                functionality, allowing you to see the progress made and keep in
-                the loop the whole time.
-              </DevStage>
-              <DevStage name="Development Complete" number="4">
-                After we have completed our development process, together we'll
-                have the chance to take a detailed look into how the solution
-                works, and make any chances or modifications as required.
-              </DevStage>
-              <DevStage name="Support" number="5">
-                We care about your post-completion experience, and will support
-                you as far as possible. If we are providing deployment and
-                maintainance as part of our services, then we will be with you
-                every step of the way.
-                <br></br>
-                Alternatively, if you choose to take the project and continue
-                without us, we would of course be there to help you with any
-                questions and support you might need.
-              </DevStage>
-            </div>
           </div>
+          <div className="w-full md:w-1/2 p-4">
+            <h2>Skills</h2>I have worked with a wide variety of technologies,
+            with my most common ones listed below.
+            <ul className="mt-4">
+              {skills.map(skillset => {
+                return (
+                  <div>
+                    {skillset.items.map(skill => {
+                      return (
+                        <li
+                          className="tag"
+                          style={{ backgroundColor: skillset.bgcolor }}
+                        >
+                          {skill}
+                        </li>
+                      )
+                    })}
+                  </div>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="container pt-6">
+        <h2 className="mt-4">What do you get?</h2>
+        <p>
+          We work hard to ensure that you get exactly the right solution for
+          your specific purpose. By choosing Cobalt Grid, you are choosing a
+          developer who cares about their work and the outcome from the project.
+          Unlike many other agencies, we won't charge extreme fees for nit-picky
+          things here and there; we will be as invested in your project as you
+          are.
+        </p>
+        <p>Here is what you can expect from start to finish:</p>
+        <div className="flex justify-center">
+          <div
+            className="grid grid-cols-1 auto-rows-fr gap-4"
+            style={{ maxWidth: "1000px" }}
+          >
+            <DevStage
+              name="Initial Contact"
+              number="1"
+              image={ImageInitialContact}
+            >
+              Once you get in contact with us, we'll schedule a chat to discuss
+              your ideas and project in more detail, taking a look over anything
+              you have done previously and the end goals for your project with
+              us.
+            </DevStage>
+            <DevStage name="Proposal" number="2" image={ImageProposal}>
+              After we are happy we understand what you are looking for, we will
+              write you a detailed propsal detailing our plan to fulfil your
+              goals. This will include the financal and legal bits of course,
+              but most importantly it will outline what the final product will
+              be able to do, and timeline for deliverables and demos. After you
+              accept this, we can get started on crafting the perfect solution
+              for you.
+            </DevStage>
+            <DevStage name="Discovery" number="3" image={ImageDiscovery}>
+              After we've agreeed to work together, we will hold detailed
+              workshops with you to explore in-depth what you want to get out of
+              the project. This is the time where we will plan the timeline for
+              the project, and make sure we completly understand what you want
+              to achieve.
+            </DevStage>
+            <DevStage name="Development" number="4" image={ImageDevelopment}>
+              Through an iterative process of creating design concepts and
+              discussing with you and gaining user feedback, you'll be able to
+              see your project come to life. After we have completed our
+              development process, together we'll have the chance to take a
+              detailed look into how the solution works, and make any changes or
+              modifications as required.
+            </DevStage>
+            <DevStage name="Deployment" number="5" image={ImageDeployment}>
+              Depending on our original agreement, we'll assist you in
+              transitioning from any previous service or platform into your
+              sparkling new one, with support and guidance on infrastructure and
+              other technical bits. We can even manage all of this for you too!
+            </DevStage>
+            <DevStage name="Support" number="6" image={ImageSupport}>
+              We care about your post-completion experience, and will support
+              you as far as possible. If we are providing deployment and
+              maintainance as part of our services, then we will be with you
+              every step of the way.
+              <br></br>
+              Alternatively, if you choose to take the project and continue
+              without us, we would of course be there to help you with any
+              questions and support you might need.
+            </DevStage>
+          </div>
+        </div>
+      </div>
+      <div className="bg-cobalt-bright">
+        <div className="container text-white py-8 space-y-10">
+          <h1>Let's discuss your idea</h1>
+          <Link
+            className="btn text-white border-2 hover:bg-cobalt-primary text-2xl"
+            to="/contact"
+            state={{ topic: "proposal" }}
+          >
+            Get In Touch
+          </Link>
         </div>
       </div>
     </Layout>

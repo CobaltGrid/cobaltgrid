@@ -28,6 +28,7 @@ module.exports = {
         "cobalt-mud": "#393939",
         "cobalt-gray": "#838383",
         "teal-700": "#2c7a7b",
+        "teal-900": "#234e52",
         "gray-200": "#edf2f7",
         "blue-600": "#3182ce",
       },

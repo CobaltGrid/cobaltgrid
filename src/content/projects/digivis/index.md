@@ -14,7 +14,7 @@ images:
 
 During the 2020 Coronavirus pandemic, many normal activities ceased, including non-urgent and routine medical and healthcare appointments, which were delayed or cancelled and unrestricted movement of people curtailed.
 
-As such Cambridge Medical Innovations Ltd., a Cambridge-based company dedicated to researching and developing novel digital healthcare products, sought to create a online vision screening test for use at home. Such an app would allow clinicians to monitor their patients eye health remotely without requiring a physical visit to a standardised test location.
+As such Cambridge Medical Innovations Ltd., a Cambridge-based company dedicated to researching and developing novel digital healthcare products, sought to create a online vision screening test for use at home, supported by funding from Addenbrookes Charitable Trust and Cambridge Enterprise. Such an app would allow clinicians to monitor their patients eye health remotely without requiring a physical visit to a standardised test location.
 
 DigiVis online is a simple-to-use web application that allows for a standard visual acuity test to be taken anywhere. Utilising a desktop or tablet as the distance display, and a smartphone or tablet as the near display, the DigiVis application allows for quick and simple testing.
 

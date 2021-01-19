@@ -7,13 +7,13 @@ p {
 }
 
 h1 {
-  @apply text-5xl font-display;
+  @apply text-5xl font-display mb-2;
 }
 h2 {
-  @apply text-4xl font-display;
+  @apply text-4xl font-display mb-2;
 }
 h3 {
-  @apply text-lg font-display;
+  @apply text-lg font-display mb-2;
 }
 
 .list-nav > li {
@@ -95,6 +95,33 @@ ul.list-tick li:before {
 
 .contact-form textarea {
   @apply block bg-blue-600 w-full px-4 pt-4 focus:outline-none;
+}
+
+li.tag {
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  height: 5
+  35px;
+  line-height: 26px;
+  padding: 3px 10px 3px 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+
+li.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 13px;
 }
 
 @tailwind components;
