@@ -52,7 +52,7 @@ const Project = ({ data }) => {
             <Image
               imgStyle={{ objectFit: "contain" }}
               style={{ maxWidth: "500px", maxHeight: "200px" }}
-              className="my-auto w-full"
+              className="my-auto mx-auto w-full"
               fluid={project.frontmatter.feature_image.childImageSharp.fluid}
               alt={`${project.frontmatter.name} Feature Image`}
             />
