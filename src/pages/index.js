@@ -129,7 +129,7 @@ const IndexPage = () => {
               </h3>
             </div>
             <img
-              className="hidden lg:inline-block w-1/3"
+              className="hidden lg:inline-block w-1/3 fade-in"
               src={ImageBuildSite}
               alt=""
             />

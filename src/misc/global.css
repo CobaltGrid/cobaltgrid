@@ -1,5 +1,7 @@
 .fade-in {
   animation: fadeIn ease 2s;
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
   -webkit-animation: fadeIn ease 2s;
   -moz-animation: fadeIn ease 2s;
   -o-animation: fadeIn ease 2s;

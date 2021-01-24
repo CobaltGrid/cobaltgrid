@@ -133,7 +133,7 @@ const Contact = props => {
                         <div className="text-left text-2xl mt-4">
                           Project Type
                         </div>
-                        <select name="project_type" required value="">
+                        <select name="project_type" required defaultValue="">
                           <option value="" disabled>
                             Select one...
                           </option>
