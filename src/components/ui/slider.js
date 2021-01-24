@@ -5,7 +5,7 @@ export default function (props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [expandedImage, setExpandedImage] = useState(null)
 
-  let goForwards = async () => {
+  let goForwards = () => {
     let newIndex =
       currentImageIndex < props.images.length - 1 ? currentImageIndex + 1 : 0
     setCurrentImageIndex(newIndex)
@@ -121,10 +121,8 @@ export default function (props) {
             {props.images.length > 1 && (
               <button
                 className="absolute ml-2 left-0 top-0 bottom-0 bg-cobalt-mud text-white text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center my-auto z-10 shadow-lg hover:bg-gray-800 focus:outline-none"
-                onClick={async () => {
-                  let index = goBackwards()
-                  console.log(index)
-                  setExpandedImage(props.images[index])
+                onClick={() => {
+                  setExpandedImage(props.images[goBackwards()])
                 }}
               >
                 <svg

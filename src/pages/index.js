@@ -11,6 +11,7 @@ import UserStories from "../misc/UserStories"
 import ImageSetup from "../images/setup.svg"
 import ImageDevelopment from "../images/development.svg"
 import ImageSupport from "../images/support.svg"
+import ImageBuildSite from "../images/build_web.svg"
 
 const IndexPage = () => {
   const [userType, setUserType] = useState("")
@@ -76,8 +77,15 @@ const IndexPage = () => {
       <div className="bg-gray-200 pb-4">
         <section
           style={{
-            height: "70vh",
-            backgroundImage: `linear-gradient(to bottom,
+            minHeight: "70vh",
+            backgroundImage: `
+            linear-gradient(to left,
+            rgba(237, 242, 247, 0.15) 0%,
+            rgba(237, 242, 247, 0.43) 60%,
+            rgba(237, 242, 247, 0.85) 70%,
+            rgba(237, 242, 247, 0.99) 90%,
+            rgb(237, 242, 247) 110%),
+            linear-gradient(to bottom,
             rgba(237, 242, 247, 0.15) 0%,
             rgba(237, 242, 247, 0.43) 40%,
             rgba(237, 242, 247, 0.85) 70%,
@@ -87,37 +95,47 @@ const IndexPage = () => {
           }}
           className="bg-homepage-splash flex justify-center"
         >
-          <div className="container text-center my-auto text-white">
-            <h1>
-              We make{" "}
-              <div className="text-cobalt-mud">
-                <Typewriter
-                  options={{
-                    loop: true,
-                  }}
-                  onInit={typewriter => {
-                    typewriter
-                      .typeString("bespoke websites")
-                      .pauseFor(2500)
-                      .deleteAll()
-                      .typeString("functional applications")
-                      .pauseFor(2500)
-                      .deleteAll()
-                      .typeString("great digital experiences")
-                      .pauseFor(2500)
-                      .start()
-                  }}
-                />
-              </div>
-            </h1>
-            <h3 className="container text-cobalt-primary mt-10 sm:mt-32">
-              Cobalt Grid is a web and digital design consultancy, experienced
-              in creating unique and functional digital experiences to help
-              deliver digital success
-            </h3>
+          <div className="container text-center my-auto sm:flex justify-center items-center text-cobalt-mud pt-4">
+            <div className="flex-grow">
+              <h1 className="sm:text-left sm:text-6xl">
+                We make{" "}
+                <div className="text-cobalt-primary">
+                  <Typewriter
+                    options={{
+                      loop: true,
+                    }}
+                    onInit={typewriter => {
+                      typewriter
+                        .typeString("bespoke websites")
+                        .pauseFor(2500)
+                        .deleteAll()
+                        .typeString("functional applications")
+                        .pauseFor(2500)
+                        .deleteAll()
+                        .typeString("portfolios")
+                        .pauseFor(2500)
+                        .deleteAll()
+                        .typeString("great digital experiences")
+                        .pauseFor(2500)
+                        .start()
+                    }}
+                  />
+                </div>
+              </h1>
+              <h3 className="text-cobalt-primary mt-10 mt-16 sm:text-left lg:w-3/4">
+                Cobalt Grid is a web and digital design consultancy, experienced
+                in creating unique and functional digital experiences to help
+                deliver digital success
+              </h3>
+            </div>
+            <img
+              className="hidden lg:inline-block w-1/3"
+              src={ImageBuildSite}
+              alt=""
+            />
           </div>
         </section>
-        <div className="container flex justify-evenly">
+        <div className="flex justify-evenly">
           <div>
             <Link
               className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary"
@@ -304,7 +322,7 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-          <div className="text-center w-full mt-2">
+          <div className="text-center w-full mt-8">
             <Link
               className="text-white btn bg-cobalt-bright text-2xl hover:bg-cobalt-primary"
               to="about"

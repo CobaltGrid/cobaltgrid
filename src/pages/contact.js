@@ -62,9 +62,11 @@ const Contact = props => {
           )}
           {!submitted && (
             <div>
-              <h2>What do you want to get in touch about?</h2>
+              <h2>What would you like to get in touch about?</h2>
               <select
-                className="bg-cobalt-bright p-4 mt-2 text-white"
+                className={`bg-cobalt-bright p-4 mt-2 text-white ${
+                  topic ? "" : "animate-pulse"
+                }`}
                 value={topic ?? ""}
                 onChange={event => setTopic(event.target.value)}
                 onBlur={event => setTopic(event.target.value)}
@@ -182,7 +184,21 @@ const Contact = props => {
                     style={{ display: "none" }}
                   />
                   <div className="flex justify-center mt-4">
-                    <ReCAPTCHA sitekey="6LeYpycTAAAAAOfuU9ap_F6MwzoNVQPOmeOYmANV" />
+                    <ReCAPTCHA
+                      className="transform scale-75 sm:transform-none"
+                      sitekey="6LeYpycTAAAAAOfuU9ap_F6MwzoNVQPOmeOYmANV"
+                    />
+                  </div>
+                  <div>
+                    By submitting this form, you agree to have read our{" "}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      className="text-cobalt-mud"
+                    >
+                      privacy policy
+                    </a>{" "}
+                    on how your submitted data will be handled.
                   </div>
                   <button
                     type="submit"

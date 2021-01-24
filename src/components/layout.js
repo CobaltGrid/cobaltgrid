@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       <div className="flex flex-col flex-grow">{children}</div>
 
       <section className="bg-cobalt-mud h-16 text-white">
-        <div className="flex container items-center px-3 h-full font-display">
+        <div className="flex container items-center px-3 h-full font-display text-xs sm:text-base">
           <div>
             &copy; {new Date().getFullYear()} Alexander Toff trading as Cobalt
             Grid
@@ -28,6 +28,9 @@ const Layout = ({ children }) => {
             <ul>
               <li className="inline-block p-1 sm:p-3">
                 <Link to="/about">About</Link>
+              </li>
+              <li className="inline-block p-1 sm:p-3">
+                <Link to="/privacy-policy">Privacy</Link>
               </li>
               <li className="inline-block p-1 sm:p-3">
                 <Link to="/contact">Contact</Link>

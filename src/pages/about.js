@@ -29,16 +29,7 @@ const About = () => {
   const skills = [
     {
       bgcolor: "#3b7653",
-      items: [
-        "HTML",
-        "CSS",
-        "SCSS",
-        "Less",
-        "Sass",
-        "Tailwind",
-        "Bootstrap",
-        "Bulma",
-      ],
+      items: ["HTML", "CSS / SCSS", "Tailwind", "Bootstrap", "Bulma"],
     },
     {
       bgcolor: "#cdc348",
@@ -110,7 +101,7 @@ const About = () => {
           </div>
         </div>
         <div
-          className="bg-cobalt-bright text-white font-display p-6 pl-12 ml-10 text-xl mt-20 mb-4"
+          className="bg-cobalt-bright text-white font-display p-6 sm:ml-10 text-xl mt-20 mb-4"
           style={{ borderRadius: "3rem" }}
         >
           <div className="flex">
@@ -138,7 +129,7 @@ const About = () => {
       </div>
       <div className="bg-cobalt-mud text-white pt-6">
         <div className="container flex flex-wrap">
-          <div className="w-full md:w-1/2 p-4">
+          <div className="w-full md:w-1/2 py-4">
             <h2>Experience</h2>
             <p>
               I pride myself in the varied projects I have worked on, and as a
@@ -165,16 +156,17 @@ const About = () => {
               </li>
             </ul>
           </div>
-          <div className="w-full md:w-1/2 p-4">
+          <div className="w-full md:w-1/2 py-4">
             <h2>Technology</h2>I have worked with a wide variety of
             technologies, with my most common ones listed below.
             <ul className="mt-4">
               {skills.map(skillset => {
                 return (
                   <div>
-                    {skillset.items.map(skill => {
+                    {skillset.items.map((skill, index) => {
                       return (
                         <li
+                          key={index}
                           className="tag"
                           style={{ backgroundColor: skillset.bgcolor }}
                         >
@@ -205,17 +197,13 @@ const About = () => {
             className="grid grid-cols-1 auto-rows-fr gap-4"
             style={{ maxWidth: "1000px" }}
           >
-            <DevStage
-              name="Initial Contact"
-              number="1"
-              image={ImageInitialContact}
-            >
+            <DevStage name="Initial Contact" image={ImageInitialContact}>
               Once you get in contact with us, we'll schedule a chat to discuss
               your ideas and project in more detail, taking a look over anything
               you have done previously and the end goals for your project with
               us.
             </DevStage>
-            <DevStage name="Proposal" number="2" image={ImageProposal}>
+            <DevStage name="Proposal" image={ImageProposal}>
               After we are happy we understand what you are looking for, we will
               write you a detailed propsal detailing our plan to fulfil your
               goals. This will include the financal and legal bits of course,
@@ -224,14 +212,14 @@ const About = () => {
               accept this, we can get started on crafting the perfect solution
               for you.
             </DevStage>
-            <DevStage name="Discovery" number="3" image={ImageDiscovery}>
+            <DevStage name="Discovery" image={ImageDiscovery}>
               After we've agreeed to work together, we will hold detailed
               workshops with you to explore in-depth what you want to get out of
               the project. This is the time where we will plan the timeline for
               the project, and make sure we completly understand what you want
               to achieve.
             </DevStage>
-            <DevStage name="Development" number="4" image={ImageDevelopment}>
+            <DevStage name="Development" image={ImageDevelopment}>
               Through an iterative process of creating design concepts and
               discussing with you and gaining user feedback, you'll be able to
               see your project come to life. After we have completed our
@@ -239,13 +227,13 @@ const About = () => {
               detailed look into how the solution works, and make any changes or
               modifications as required.
             </DevStage>
-            <DevStage name="Deployment" number="5" image={ImageDeployment}>
+            <DevStage name="Deployment" image={ImageDeployment}>
               Depending on our original agreement, we'll assist you in
               transitioning from any previous service or platform into your
               sparkling new one, with support and guidance on infrastructure and
               other technical bits. We can even manage all of this for you too!
             </DevStage>
-            <DevStage name="Support" number="6" image={ImageSupport}>
+            <DevStage name="Support" image={ImageSupport}>
               We care about your post-completion experience, and will support
               you as far as possible. If we are providing deployment and
               maintainance as part of our services, then we will be with you
