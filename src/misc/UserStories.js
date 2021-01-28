@@ -1,6 +1,6 @@
 let stories = [
   {
-    name: "buisness",
+    name: "business",
     purposes: [
       {
         name: "get started with ecommerce",

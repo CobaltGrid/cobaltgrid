@@ -6,7 +6,7 @@ import DevStage from "../components/ui/dev-stage"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 
-import ImageInitialContact from "../images/about/inital_contact.svg"
+import ImageInitialContact from "../images/about/initial_contact.svg"
 import ImageProposal from "../images/about/proposal.svg"
 import ImageDiscovery from "../images/about/discovery.svg"
 import ImageDevelopment from "../images/about/development.svg"
@@ -205,18 +205,18 @@ const About = () => {
             </DevStage>
             <DevStage name="Proposal" image={ImageProposal}>
               After we are happy we understand what you are looking for, we will
-              write you a detailed propsal detailing our plan to fulfil your
-              goals. This will include the financal and legal bits of course,
+              write you a detailed proposal detailing our plan to fulfil your
+              goals. This will include the financial and legal bits of course,
               but most importantly it will outline what the final product will
               be able to do, and timeline for deliverables and demos. After you
               accept this, we can get started on crafting the perfect solution
               for you.
             </DevStage>
             <DevStage name="Discovery" image={ImageDiscovery}>
-              After we've agreeed to work together, we will hold detailed
+              After we've agreed to work together, we will hold detailed
               workshops with you to explore in-depth what you want to get out of
               the project. This is the time where we will plan the timeline for
-              the project, and make sure we completly understand what you want
+              the project, and make sure we completely understand what you want
               to achieve.
             </DevStage>
             <DevStage name="Development" image={ImageDevelopment}>
@@ -236,7 +236,7 @@ const About = () => {
             <DevStage name="Support" image={ImageSupport}>
               We care about your post-completion experience, and will support
               you as far as possible. If we are providing deployment and
-              maintainance as part of our services, then we will be with you
+              maintenance as part of our services, then we will be with you
               every step of the way.
               <br></br>
               Alternatively, if you choose to take the project and continue

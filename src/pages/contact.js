@@ -146,8 +146,8 @@ const Contact = props => {
                           <option value="SME Business Site">
                             SME Business Site
                           </option>
-                          <option value="Exisiting project">
-                            Exisiting project
+                          <option value="Existing project">
+                            Existing project
                           </option>
                           <option value="Bespoke application">
                             Bespoke application

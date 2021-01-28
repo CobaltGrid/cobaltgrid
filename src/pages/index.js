@@ -263,7 +263,7 @@ const IndexPage = () => {
               Equally, we're experienced in the full development cycle, from
               start to finish and beyond. We can be with you every step of the
               way, from initial ideation and creative design, development and
-              testing, through to deployment, support and maintainance.
+              testing, through to deployment, support and maintenance.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
@@ -297,7 +297,7 @@ const IndexPage = () => {
               <h3>Development</h3>
               <div className="inline-block">
                 <ul className="list-tick text-left">
-                  <li>Content Managment Systems</li>
+                  <li>Content Management Systems</li>
                   <li>Business and Portfolio Websites</li>
                   <li>Bespoke Applications</li>
                 </ul>
@@ -317,7 +317,7 @@ const IndexPage = () => {
                 <ul className="list-tick text-left">
                   <li>Technical Troubleshooting</li>
                   <li>SEO and Site Performance Indexing</li>
-                  <li>Maintainance and Upgrade Support</li>
+                  <li>Maintenance and Upgrade Support</li>
                 </ul>
               </div>
             </div>

@@ -3,7 +3,7 @@ import React from "react"
 export default function DevStage(props) {
   return (
     <div
-      className={`flex items-center space-x-4 px-2 ${props.className ?? ""}`}
+      className={`flex flex-wrap sm:flex-nowrap justify-center items-center space-x-4 px-2 ${props.className ?? ""}`}
     >
       <img src={props.image} style={{ maxWidth: "200px" }} alt="" />
       <div className="flex-grow">

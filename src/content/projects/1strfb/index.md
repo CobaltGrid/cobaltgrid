@@ -20,4 +20,4 @@ Commonly, gaming groups stick with off-the-self community forums or bland gaming
 
 As such, we were approached by the management of the group, with a brief of creating a fresh, modern and responsive web solution to act as the central hub for the group, including member management, event management and social aspects such as a community forum.
 
-The website comprises of a custom-built frontend for group members to be able to explore and RSVP for events, and a comprenisve backend system to allow the managing of the member's “ranks” in the virtual military structure of 1st RFB. This system was also interfaced with the SquadXML system to allow these ranks to be replicated automatically in game.
+The website comprises of a custom-built frontend for group members to be able to explore and RSVP for events, and a comprehensive backend system to allow the managing of the member's “ranks” in the virtual military structure of 1st RFB. This system was also interfaced with the SquadXML system to allow these ranks to be replicated automatically in game.
