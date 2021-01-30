@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: false,
   theme: {
     fontFamily: {
       display: ["Alata", "sans-serif"],

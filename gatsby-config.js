@@ -51,37 +51,24 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-78832237-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "cobaltgrid.com",
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "UA-78832237-1", // Google Analytics / GA
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+        },
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-sentry",
-    //   options: {
-    //     dsn: "YOUR_SENTRY_DSN_URL",
-    //     // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
-    //     environment: process.env.NODE_ENV,
-    //     enabled: (() => ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)()
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
