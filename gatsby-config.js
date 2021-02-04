@@ -2,12 +2,16 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-module.exports = {
-  siteMetadata: {
+let metadata = {
     title: `Cobalt Grid`,
     description: `Cobalt Grid is a creative studio based around simplicity, design and functionality. We offer digital design services for the digital market - largely based around the web. We offer solutions to harness the power of the web, from the start to end.`,
     author: `Cobalt Grid`,
-  },
+}
+  
+let siteUrl = "https://cobaltgrid.com"
+
+module.exports = {
+  siteMetadata: metadata,
   plugins: [
     /*
       SEO
@@ -83,5 +87,54 @@ module.exports = {
         tailwind: true,
       },
     },
+    {
+    resolve: `gatsby-plugin-json-output`,
+    options: {
+      siteUrl: siteUrl,
+      graphQLQuery: `
+        {
+          allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date] }
+              limit: 12
+              filter: {
+                fields: { sourceName: { eq: "project" } }
+              }
+            ) {
+              edges {
+                node {
+                  frontmatter {
+                    name
+                    excerpt
+                    slug
+                    featured
+                    feature_image {
+                      publicURL
+                    }
+                  }
+                }
+              }
+            }
+        }
+      `,
+      feedMeta: {
+        author: {
+          name: metadata.author,
+        },
+        description: metadata.description,
+        favicon: `${siteUrl}/favicon-32x32.png`,
+        title: "Cobalt Grid Project Feed",
+      },
+      serializeFeed: results => results.data.allMarkdownRemark.edges.map(({ node }) => ({
+        id: node.frontmatter.slug,
+        url: siteUrl + `/project/${node.frontmatter.slug}`,
+        name: node.frontmatter.title,
+        excerpt: node.frontmatter.excerpt,
+        featured: node.frontmatter.featured,
+        image: node.frontmatter.feature_image.publicURL,
+      })),
+      feedFilename: "projects",
+      nodesPerFeedFile: 100,
+    }
+  }
   ],
 }
