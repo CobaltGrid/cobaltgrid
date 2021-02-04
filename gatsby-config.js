@@ -130,7 +130,7 @@ module.exports = {
         name: node.frontmatter.title,
         excerpt: node.frontmatter.excerpt,
         featured: node.frontmatter.featured,
-        image: node.frontmatter.feature_image.publicURL,
+        image: siteUrl + node.frontmatter.feature_image.publicURL,
       })),
       feedFilename: "projects",
       nodesPerFeedFile: 100,
