@@ -57,6 +57,7 @@ const IndexPage = () => {
       e.target.value
     e.target.style.width = `${sizer.offsetWidth}px`
     sizer.classList.toggle("hidden")
+    setUserPurpose('')
     setUserType(e.target.value)
   }
 

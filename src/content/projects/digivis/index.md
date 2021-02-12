@@ -3,7 +3,7 @@ name: DigiVis
 slug: digivis
 date: "2020-06-30"
 tech: [Vue, Javascript, Laravel]
-excerpt: "DigiVis is a self-contained, web-based visual acuity test for remote testing"
+excerpt: "DigiVis is a self-contained, web-based visual acuity test designed for remote consultations"
 feature_image: "./feature.png"
 featured: true
 images_container_class: "bg-cobalt-mud"
