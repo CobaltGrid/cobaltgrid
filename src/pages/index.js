@@ -139,7 +139,7 @@ const IndexPage = () => {
         <div className="flex justify-evenly">
           <div>
             <Link
-              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary"
+              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary transition"
               to="/recent-projects"
             >
               <span className="fa fa-folder"></span> Recent Projects
@@ -147,7 +147,7 @@ const IndexPage = () => {
           </div>
           <div>
             <Link
-              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary"
+              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary transition"
               to="contact"
             >
               <span className="fa fa-envelope"></span> Get In Touch
@@ -155,24 +155,24 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <section className="text-center my-16 container">
+        <section className="my-32 container">
           <div>
             <h2 className="h-lined">Featured Work</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 text-center">
             {data.featuredProjects.edges.map((project, i) => {
               return <ProjectCard key={i} project={project.node.frontmatter} />
             })}
           </div>
         </section>
-        <section className="py-16 text-center bg-cobalt-mud">
-          <h2 className="h-lined mb-6 text-white">How can we help?</h2>
-          <div className="text-white container">
+        <section className="py-16 text-center bg-blue-300 text-gray-700">
+          <h2 className="h-lined mb-6">How can we help?</h2>
+          <div className="container">
             <h1>
               {/* eslint-disable */}
               I'm a
               <select
-                className={`bg-cobalt-primary focus:outline-none mx-2 ${
+                className={`bg-cobalt-primary focus:outline-none mx-2 text-white ${
                   userType ? "" : "animate-pulse"
                 }`}
                 style={{ fontSize: "80%" }}
@@ -194,7 +194,7 @@ const IndexPage = () => {
                 <span className="fade-in leading-tight">
                   , looking to
                   <select
-                    className={`bg-cobalt-primary focus:outline-none mx-2 max-w-full ${
+                    className={`bg-cobalt-primary focus:outline-none mx-2 max-w-full text-white ${
                       userPurpose ? "" : "animate-pulse"
                     }`}
                     style={{ fontSize: "80%" }}
@@ -228,7 +228,7 @@ const IndexPage = () => {
             </h1>
 
             {userPurpose && (
-              <div className="fade-in bg-cobalt-bright border-8 border-cobalt-primary border-dashed my-4 p-4 text-2xl">
+              <div className="fade-in bg-cobalt-bright border-8 border-cobalt-primary border-dashed my-4 p-4 text-2xl text-white">
                 {
                   UserStories.find(
                     user => user.name === userType
@@ -250,7 +250,7 @@ const IndexPage = () => {
           </div>
         </section>
 
-        <section className="text-center container my-16 px-3">
+        <section className="container my-16 px-3">
           <div className="container">
             <h2 className="h-lined">What we offer</h2>
             <p className="mt-4">
@@ -267,7 +267,7 @@ const IndexPage = () => {
               testing, through to deployment, support and maintenance.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 text-center">
             <div>
               <div className="text-6xl mb-4 text-cobalt-bright">
                 <img
@@ -325,7 +325,7 @@ const IndexPage = () => {
           </div>
           <div className="text-center w-full mt-8">
             <Link
-              className="text-white btn bg-cobalt-bright text-2xl hover:bg-cobalt-primary"
+              className="text-white btn bg-cobalt-bright text-2xl hover:bg-cobalt-primary transition"
               to="about"
             >
               Find out more

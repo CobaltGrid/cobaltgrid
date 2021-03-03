@@ -14,7 +14,7 @@ export default function ProjectCard(props) {
               className="absolute left-0 top-0 w-full h-full object-contain"
             />
           </div>
-          <div className="project-details absolute left-0 top-0 w-full h-full bg-cobalt-mud text-white flex items-center text-lg p-2">
+          <div className="project-details absolute left-0 top-0 w-full h-full bg-cobalt-mud text-white flex items-center text-lg p-2 bg-opacity-95 transition">
             {props.project.excerpt}
           </div>
         </div>

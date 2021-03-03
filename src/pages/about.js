@@ -107,7 +107,7 @@ const About = () => {
           <div className="flex">
             <div
               type="text"
-              className="w-full bg-transparent text-white placeholder-gray-300 m-h-full animate-pulse focus:animate-none flex-grow hover:bg-teal-900 focus:bg-teal-900 focus:outline-none focus:shadow-outline focus:border-blue-300 pt-2 mr-4 px-4 overflow-y-auto overflow-x-hidden"
+              className="w-full bg-transparent text-white placeholder-gray-300 m-h-full animate-pulse focus:animate-none flex-grow hover:bg-teal-900 focus:bg-teal-900 focus:outline-none focus:shadow-outline focus:border-blue-300 pt-2 mr-4 transition px-4 overflow-y-auto overflow-x-hidden"
               style={{ borderRadius: "1rem" }}
               placeholder=""
               contentEditable="true"
@@ -250,7 +250,7 @@ const About = () => {
         <div className="container text-white py-8 space-y-10">
           <h1>Let's discuss your idea</h1>
           <Link
-            className="btn text-white border-2 hover:bg-cobalt-primary text-2xl"
+            className="btn text-white border-2 hover:bg-cobalt-primary text-2xl transition"
             to="/contact"
             state={{ topic: "proposal" }}
           >

@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <Header />
       <div className="flex flex-col flex-grow">{children}</div>
 
-      <section className="bg-cobalt-mud h-16 text-white">
+      <footer className="bg-cobalt-mud h-16 text-white">
         <div className="flex container items-center px-3 h-full font-display text-xs sm:text-base">
           <div>
             &copy; {new Date().getFullYear()} Alexander Toff trading as Cobalt
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
             </ul>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   )
 }
