@@ -16,6 +16,6 @@ ChartFox was created to assist flight simulator pilots with finding and using av
 
 Something that has always been difficult, however, has been access to resources. For most flights, one of the most important steps in preparation and execution is using a navigation chart. These document procedures and ground layouts at airports across the world, and provide vital information to the pilots.
 
-Each country has its own way of doing things, and so naturally the process of finding up-to-date charts is very cumbersome.
+Each country has it's own way of doing things, and so naturally the process of finding up-to-date charts is very cumbersome.
 
 ChartFox solves these issues, by providing a one-stop shop for aviation charts for this purpose. It collates the charts from various AIPs (Aeronautical Information Publication) across the globe, and provides users with a clean, easy to use interface to view them in.
