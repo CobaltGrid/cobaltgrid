@@ -75,8 +75,8 @@ const About = () => {
               business.
             </p>
             <p>
-              I have been creating websites, programs, widgets and more
-              professionally since 2013. From online communities and groups, to
+              I’ve been creating websites, programs, widgets and more
+              since I could use a computer, and professionally since 2018. From online communities and groups, to
               portfolio and business sites, and even medical devices and
               applications, I have been involved in a wide range of projects for
               clients from multiple sectors.
