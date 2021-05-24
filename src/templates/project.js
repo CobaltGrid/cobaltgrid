@@ -5,6 +5,9 @@ import Image from "gatsby-image"
 import Slider from "../components/ui/slider"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import "./project.css"
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
@@ -85,7 +88,7 @@ const Project = ({ data }) => {
 
         <div className="flex flex-wrap lg:flex-nowrap -mx2 mt-8">
           <div
-            className="w-full flex-grow px-2 font-display"
+            className="w-full flex-grow px-2 font-display project-text"
             dangerouslySetInnerHTML={{ __html: project.html }}
           ></div>
           <div className="w-full lg:w-1/2 px-2 mb-2 flex-none">

@@ -3,7 +3,7 @@ name: Cobalt Weather
 slug: cobalt-weather
 date: "2017-06-07"
 tech: [Java, Android, REST API, Laravel]
-excerpt: "A android application to fetch, display and track aviation weather"
+excerpt: "An android application to fetch, display and track aviation weather"
 feature_image: "./feature.png"
 featured: false
 slider:

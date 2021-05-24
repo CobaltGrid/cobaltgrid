@@ -3,7 +3,7 @@ name: 1st RFB
 slug: 1rfb
 date: "2019-03-4"
 tech: [Laravel, Steam API]
-excerpt: "1st RFB is an online gaming group, who needed a central hub for user management and to promote activities"
+excerpt: "Designing a custom hub for user management and engagement for a gaming group"
 feature_image: "./feature.png"
 featured: true
 slider:
@@ -14,7 +14,7 @@ slider:
   - "./image5.png"
 ---
 
-As part of a revival of 1st RFB, we were brought in to deliver a new and refreshed website to provide a central hub for members of the group to get involved with the group.
+As part of a revival of 1st RFB, an online gaming group, we were brought in to deliver a new and refreshed website to provide a central hub for members of the group to get involved.
 
 Commonly, gaming groups stick with off-the-self community forums or bland gaming-specific services such as Enjin to provide an online provision for their members. Although this might be a quick solution, it often provides poor user experiences, and a product that is not specific to the needs of the community who use it.
 

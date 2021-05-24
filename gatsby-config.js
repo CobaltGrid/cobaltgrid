@@ -3,11 +3,11 @@ require("dotenv").config({
 })
 
 let metadata = {
-    title: `Cobalt Grid`,
-    description: `Cobalt Grid is a creative studio based around simplicity, design and functionality. We offer digital design services for the digital market - largely based around the web. We offer solutions to harness the power of the web, from the start to end.`,
-    author: `Cobalt Grid`,
+  title: `Cobalt Grid`,
+  description: `Cobalt Grid is a creative studio based around simplicity, design and functionality. We offer digital design services for the digital market - largely based around the web. We offer solutions to harness the power of the web, from the start to end.`,
+  author: `Cobalt Grid`,
 }
-  
+
 let siteUrl = "https://cobaltgrid.com"
 
 module.exports = {
@@ -45,6 +45,7 @@ module.exports = {
       Content
     */
     `gatsby-transformer-remark`,
+    `gatsby-plugin-catch-links`,
     `gatsby-remark-source-name`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -88,10 +89,10 @@ module.exports = {
       },
     },
     {
-    resolve: `gatsby-plugin-json-output`,
-    options: {
-      siteUrl: siteUrl,
-      graphQLQuery: `
+      resolve: `gatsby-plugin-json-output`,
+      options: {
+        siteUrl: siteUrl,
+        graphQLQuery: `
         {
           allMarkdownRemark(
               sort: { order: DESC, fields: [frontmatter___date] }
@@ -116,25 +117,26 @@ module.exports = {
             }
         }
       `,
-      feedMeta: {
-        author: {
-          name: metadata.author,
+        feedMeta: {
+          author: {
+            name: metadata.author,
+          },
+          description: metadata.description,
+          favicon: `${siteUrl}/favicon-32x32.png`,
+          title: "Cobalt Grid Project Feed",
         },
-        description: metadata.description,
-        favicon: `${siteUrl}/favicon-32x32.png`,
-        title: "Cobalt Grid Project Feed",
+        serializeFeed: results =>
+          results.data.allMarkdownRemark.edges.map(({ node }) => ({
+            id: node.frontmatter.slug,
+            url: siteUrl + `/project/${node.frontmatter.slug}`,
+            name: node.frontmatter.title,
+            excerpt: node.frontmatter.excerpt,
+            featured: node.frontmatter.featured,
+            image: siteUrl + node.frontmatter.feature_image.publicURL,
+          })),
+        feedFilename: "projects",
+        nodesPerFeedFile: 100,
       },
-      serializeFeed: results => results.data.allMarkdownRemark.edges.map(({ node }) => ({
-        id: node.frontmatter.slug,
-        url: siteUrl + `/project/${node.frontmatter.slug}`,
-        name: node.frontmatter.title,
-        excerpt: node.frontmatter.excerpt,
-        featured: node.frontmatter.featured,
-        image: siteUrl + node.frontmatter.feature_image.publicURL,
-      })),
-      feedFilename: "projects",
-      nodesPerFeedFile: 100,
-    }
-  }
+    },
   ],
 }

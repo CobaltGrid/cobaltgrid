@@ -1,0 +1,6 @@
+.project-text a {
+  @apply underline transition-colors text-cobalt-primary;
+}
+.project-text a:hover {
+  @apply text-cobalt-bright;
+}

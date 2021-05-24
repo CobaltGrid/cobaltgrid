@@ -6,6 +6,7 @@
     "autoprefixer": "^10.2.1",
     "gatsby": "^2.30.3",
     "gatsby-image": "^2.9.0",
+    "gatsby-plugin-catch-links": "^3.5.0",
     "gatsby-plugin-google-gtag": "^2.7.0",
     "gatsby-plugin-json-output": "^1.2.0",
     "gatsby-plugin-manifest": "^2.10.0",

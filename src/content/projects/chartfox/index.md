@@ -3,7 +3,7 @@ name: ChartFox
 slug: chartfox
 date: "2018-03-31"
 tech: [Vue, Javascript, Laravel Lumen]
-excerpt: "ChartFox is a utility for flight simulation pilots, allowing quick and easy access to navigation charts"
+excerpt: "A utility for flight simulation pilots, allowing quick and easy access to navigation charts"
 feature_image: "./feature.png"
 featured: true
 slider:
