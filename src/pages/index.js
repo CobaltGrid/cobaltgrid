@@ -57,7 +57,7 @@ const IndexPage = () => {
       e.target.value
     e.target.style.width = `${sizer.offsetWidth}px`
     sizer.classList.toggle("hidden")
-    setUserPurpose('')
+    setUserPurpose("")
     setUserType(e.target.value)
   }
 
@@ -74,7 +74,10 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Cobalt Grid | Digital Development Services" />
+      <SEO
+        title="Cobalt Grid | Digital Development Services"
+        titleTemplate="%s"
+      />
       <div className="bg-gray-200 pb-4">
         <section
           style={{
