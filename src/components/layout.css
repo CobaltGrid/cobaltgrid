@@ -64,7 +64,7 @@ ul.list-tick li:before {
 .project-card .card-title {
   bottom: -1rem;
   right: -1rem;
-  @apply text-right bg-cobalt-primary px-4 py-1 absolute text-white;
+  @apply text-right bg-cobalt-primary px-4 py-1 absolute text-white rounded-sm;
 }
 
 .project-card .project-details {

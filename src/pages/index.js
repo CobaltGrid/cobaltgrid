@@ -142,7 +142,7 @@ const IndexPage = () => {
         <div className="flex justify-evenly">
           <div>
             <Link
-              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary transition"
+              className="bg-cobalt-bright btn hover:bg-teal-700 text-white rounded hover:text-white hover:border-cobalt-primary transition"
               to="/recent-projects"
             >
               <span className="fa fa-folder"></span> Recent Projects
@@ -150,7 +150,7 @@ const IndexPage = () => {
           </div>
           <div>
             <Link
-              className="border border-cobalt-bright btn hover:bg-teal-700 text-cobalt-bright hover:text-white hover:border-cobalt-primary transition"
+              className="bg-cobalt-bright btn hover:bg-teal-700 text-white rounded hover:text-white hover:border-cobalt-primary transition"
               to="contact"
             >
               <span className="fa fa-envelope"></span> Get In Touch
@@ -328,7 +328,7 @@ const IndexPage = () => {
           </div>
           <div className="text-center w-full mt-8">
             <Link
-              className="text-white btn bg-cobalt-bright text-2xl hover:bg-cobalt-primary transition"
+              className="text-white btn bg-cobalt-bright text-2xl hover:bg-cobalt-primary transition rounded-sm"
               to="about"
             >
               Find out more
