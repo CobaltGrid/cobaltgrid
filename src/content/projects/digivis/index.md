@@ -19,3 +19,6 @@ As such Cambridge Medical Innovations Ltd., a Cambridge-based company dedicated 
 DigiVis online is a simple-to-use web application that allows for a standard visual acuity test to be taken anywhere. Utilising a desktop or tablet as the distance display, and a smartphone or tablet as the near display, the DigiVis application allows for quick and simple testing.
 
 The application was built by Cobalt Grid, and successfully demonstrated conformity to gain status as a CE-marked Class I medical device, with development being conducted and maintained according to the IEC 62304 standard.
+
+- [Cambridge University Hospitals: "New tech to test children's eyesight at home"](https://www.cuh.nhs.uk/news/new-tech-to-test-childrens-eyesight-at-home/)
+- [ITV News: "New app to test children's eye sight from home for those who've missed eye tests"](https://www.itv.com/news/anglia/2021-03-27/new-app-to-test-childrens-eye-sight-from-home-for-those-whove-missed-eye-tests)
