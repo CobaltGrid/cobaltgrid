@@ -4,3 +4,6 @@
 .project-text a:hover {
   @apply text-cobalt-bright;
 }
+.project-text ul {
+  @apply list-disc pl-4
+}
