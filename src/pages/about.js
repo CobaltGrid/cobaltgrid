@@ -33,7 +33,7 @@ const About = () => {
     },
     {
       bgcolor: "#cdc348",
-      items: ["Javascript", "Vue.js", "React"],
+      items: ["JavaScript", "TypeScript", "Vue.js", "React"],
     },
     {
       bgcolor: "#8993be",
