@@ -2,14 +2,13 @@
 name: ChartFox
 slug: chartfox
 date: "2018-03-31"
-tech: [Vue, Javascript, Laravel Lumen]
+tech: [Vue, Typescript, Laravel]
 excerpt: "A utility for flight simulation pilots, allowing quick and easy access to navigation charts"
 feature_image: "./feature.png"
 featured: true
 slider:
   - "./slide1.png"
   - "./slide2.png"
-  - "./slide3.png"
 ---
 
 ChartFox was created to assist flight simulator pilots with finding and using aviation charts for educational purposes. Flight simulation is a large industry, and with “networks” such as VATSIM, IVAO and PilotEdge, it is becoming even easier for people to learn some of the skills of aviation in a simulated setting.
