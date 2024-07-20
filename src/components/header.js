@@ -1,32 +1,27 @@
 import { useStaticQuery, graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 function Header() {
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "logo-wide.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 600) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  logo: file(relativePath: {eq: "logo-wide.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 600, layout: CONSTRAINED)
     }
-  `)
+  }
+}`)
 
   return (
     <nav className="w-full mx-auto bg-white">
       <div className="container flex flex-wrap items-center justify-between sm:px-16 py-2 px-3">
         <div className="h-12 flex-grow">
           <Link to="/">
-            <Img
+            <GatsbyImage
+              image={data.logo.childImageSharp.gatsbyImageData}
               style={{ height: "100%" }}
               imgStyle={{ width: "auto" }}
-              fluid={data.logo.childImageSharp.fluid}
-              alt="Cobalt Grid Logo"
-            />
+              alt="Cobalt Grid Logo" />
           </Link>
         </div>
         <button
@@ -35,6 +30,7 @@ function Header() {
           onClick={() => {
             document.querySelector("#nav-content").classList.toggle("hidden")
           }}
+          aria-label="Toggle Navigation"
         >
           <svg
             className="fill-current h-12 w-12 text-cobalt-mud"
@@ -64,7 +60,7 @@ function Header() {
         </ul>
       </div>
     </nav>
-  )
+  );
 }
 
 Header.propTypes = {

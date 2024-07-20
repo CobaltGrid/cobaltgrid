@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
-export default function (props) {
+const Slider = function (props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [expandedImage, setExpandedImage] = useState(null)
 
@@ -27,6 +27,7 @@ export default function (props) {
           className="absolute ml-2 left-0 top-0 bottom-0 bg-cobalt-mud text-white text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center my-auto z-10 shadow-lg hover:bg-gray-800 focus:outline-none"
           onClick={goBackwards}
           onKeyDown={goBackwards}
+          aria-label="Previous Image"
         >
           <svg
             x="0px"
@@ -62,9 +63,10 @@ export default function (props) {
               onKeyDown={() => {
                 setExpandedImage(image)
               }}
+              aria-label="Expand Image"
             >
-              <Image
-                fluid={image.childImageSharp.fluid}
+              <GatsbyImage
+                image={image.childImageSharp.gatsbyImageData}
                 style={{
                   height: "100%",
                   width: "100%",
@@ -72,16 +74,16 @@ export default function (props) {
                   bottom: "0",
                   position: "initial",
                 }}
-                imgStyle={{ objectFit: "contain" }}
-              />
+                imgStyle={{ objectFit: "contain" }} />
             </button>
-          )
+          );
         })}
       </div>
       {props.images.length > 1 && (
         <button
           className="absolute mr-2 right-0 top-0 bottom-0 bg-cobalt-mud text-white text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center my-auto z-10 shadow-lg hover:bg-gray-800 focus:outline-none"
           onClick={goForwards}
+          aria-label="Next Image"
         >
           <svg
             x="0px"
@@ -115,6 +117,7 @@ export default function (props) {
               onKeyDown={() => {
                 setExpandedImage(null)
               }}
+            aria-label="Close Image"
             >
               <span className="fas fa-times"></span>
             </button>
@@ -124,6 +127,7 @@ export default function (props) {
                 onClick={() => {
                   setExpandedImage(props.images[goBackwards()])
                 }}
+                aria-label="Previous Image"
               >
                 <svg
                   x="0px"
@@ -154,6 +158,7 @@ export default function (props) {
                 onClick={() => {
                   setExpandedImage(props.images[goForwards()])
                 }}
+                aria-label="Next Image"
               >
                 <svg
                   x="0px"
@@ -173,8 +178,8 @@ export default function (props) {
                 </svg>
               </button>
             )}
-            <Image
-              fluid={expandedImage.childImageSharp.fluid}
+            <GatsbyImage
+              image={expandedImage.childImageSharp.gatsbyImageData}
               className="mx-auto my-auto"
               style={{
                 height: "100%",
@@ -183,11 +188,12 @@ export default function (props) {
                 bottom: "0",
                 position: "initial",
               }}
-              imgStyle={{ objectFit: "contain" }}
-            />
+              imgStyle={{ objectFit: "contain" }} />
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }
+
+export default Slider;

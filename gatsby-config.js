@@ -14,6 +14,10 @@ module.exports = {
   siteMetadata: metadata,
   plugins: [
     /*
+      Build
+      */
+    `gatsby-plugin-netlify`,
+    /*
       SEO
     */
     `gatsby-plugin-react-helmet`,
@@ -46,7 +50,6 @@ module.exports = {
     */
     `gatsby-transformer-remark`,
     `gatsby-plugin-catch-links`,
-    `gatsby-remark-source-name`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

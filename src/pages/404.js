@@ -2,13 +2,13 @@ import { Link } from "gatsby"
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import Image404 from "../images/404.svg"
 
-export default () => (
+const Page404 = () => (
   <Layout>
-    <SEO title="Not Found" />
+    <Seo title="Not Found" />
     <div className="container h-full my-auto">
       <div className="flex justify-center">
         <div className="flex flex-col items-center md:flex-none md:relative">
@@ -38,3 +38,5 @@ export default () => (
     </div>
   </Layout>
 )
+
+export default Page404;
