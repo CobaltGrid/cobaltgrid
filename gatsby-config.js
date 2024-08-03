@@ -14,6 +14,10 @@ module.exports = {
   siteMetadata: metadata,
   plugins: [
     /*
+      Build
+      */
+    `gatsby-plugin-netlify`,
+    /*
       SEO
     */
     `gatsby-plugin-react-helmet`,
@@ -27,8 +31,16 @@ module.exports = {
     /*
       Images
     */
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: 'blurred'
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -46,7 +58,6 @@ module.exports = {
     */
     `gatsby-transformer-remark`,
     `gatsby-plugin-catch-links`,
-    `gatsby-remark-source-name`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

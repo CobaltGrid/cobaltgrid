@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import DevStage from "../components/ui/dev-stage"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import ImageInitialContact from "../images/about/initial_contact.svg"
 import ImageProposal from "../images/about/proposal.svg"
@@ -14,17 +14,13 @@ import ImageDeployment from "../images/about/deployment.svg"
 import ImageSupport from "../images/about/support2.svg"
 
 const About = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      headshot: file(relativePath: { eq: "prof_headshot.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  headshot: file(relativePath: {eq: "prof_headshot.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 300, layout: CONSTRAINED)
     }
-  `)
+  }
+}`)
 
   const skills = [
     {
@@ -57,14 +53,13 @@ const About = () => {
 
   return (
     <Layout>
-      <SEO title="About" />
+      <Seo title="About" />
       <div className="container">
         <div className="relative pt-10">
           <div className="w-24 absolute left-0 top-0">
-            <Image
-              className="rounded-full"
-              fluid={data.headshot.childImageSharp.fluid}
-            />
+            <GatsbyImage
+              image={data.headshot.childImageSharp.gatsbyImageData}
+              className="rounded-full" />
           </div>
           <div
             className="bg-cobalt-primary text-white ml-12 text-display p-6 pl-12 text-xl font-display"
@@ -259,7 +254,7 @@ const About = () => {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default About

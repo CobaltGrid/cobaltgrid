@@ -2,12 +2,12 @@ import { Link } from "gatsby"
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
-export default () => {
+const PrivacyPolicyPage = () => {
   return (
     <Layout>
-      <SEO title="Privacy Policy" />
+      <Seo title="Privacy Policy" />
       <div className="container pt-4">
         <h1 className="text-cobalt-mud">Privacy Policy</h1>
         <p>
@@ -214,3 +214,4 @@ export default () => {
     </Layout>
   )
 }
+export default PrivacyPolicyPage;

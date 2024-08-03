@@ -2,16 +2,16 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import ProjectCard from "../components/ui/project-card"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      recentProjects: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+    recentProjects: allMarkdownRemark(
+        sort: {frontmatter: {date: DESC}}
         limit: 12
-        filter: { fields: { sourceName: { eq: "project" } } }
+        filter: {fields: {sourceName: {eq: "project"}}}
       ) {
         edges {
           node {
@@ -31,7 +31,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Recent Projects" />
+      <Seo title="Recent Projects" />
       <section className="text-center mt-8 container">
         <div>
           <h1 className="h-lined">Recent Work</h1>

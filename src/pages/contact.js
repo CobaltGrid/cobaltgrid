@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Contact = props => {
   const [topic, setTopic] = useState(
@@ -51,7 +51,7 @@ const Contact = props => {
 
   return (
     <Layout>
-      <SEO title="Contact Us" />
+      <Seo title="Contact Us" />
       <div className="my-auto">
         <div className="container text-center mb-2">
           {submitted && (

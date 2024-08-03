@@ -1,12 +1,12 @@
 import React from "react"
 
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import Seo from "../../components/seo"
 
-export default () => {
+const TermsGeneralPage = () => {
   return (
     <Layout>
-      <SEO title="General Sale Terms & Conditions" />
+      <Seo title="General Sale Terms & Conditions" />
       <div className="container pt-4">
         <p>You can view our generic term and conditions of sale below.</p>
 
@@ -19,3 +19,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default TermsGeneralPage

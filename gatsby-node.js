@@ -4,6 +4,21 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  if (node.internal.type !== 'MarkdownRemark') {
+    return;
+  }
+
+  const { createNodeField } = actions;
+  const fileNode = getNode(node.parent);
+    createNodeField({
+      node,
+      name: 'sourceName',
+      value: fileNode.sourceInstanceName,
+    });
+};
+
+
 // Add custom fields
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes, createFieldExtension } = actions

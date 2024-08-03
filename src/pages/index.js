@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import ProjectCard from "../components/ui/project-card"
 import Typewriter from "typewriter-effect"
 
@@ -16,38 +16,31 @@ import ImageBuildSite from "../images/build_web.svg"
 const IndexPage = () => {
   const [userType, setUserType] = useState("")
   const [userPurpose, setUserPurpose] = useState("")
-  const data = useStaticQuery(graphql`
-    query {
-      homesplash: file(relativePath: { eq: "home-splash.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 4000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      featuredProjects: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 3
-        filter: {
-          fields: { sourceName: { eq: "project" } }
-          frontmatter: { featured: { eq: true } }
-        }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              name
-              excerpt
-              slug
-              feature_image {
-                publicURL
-              }
-            }
+  const data = useStaticQuery(graphql`{
+  homesplash: file(relativePath: {eq: "home-splash.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
+    }
+  }
+  featuredProjects: allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    limit: 3
+    filter: {fields: {sourceName: {eq: "project"}}, frontmatter: {featured: {eq: true}}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          name
+          excerpt
+          slug
+          feature_image {
+            publicURL
           }
         }
       }
     }
-  `)
+  }
+}`)
 
   const onUserTypeChange = e => {
     if (!e.target.value) return
@@ -74,7 +67,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title="Cobalt Grid | Digital Development Services"
         titleTemplate="%s"
       />
@@ -95,7 +88,7 @@ const IndexPage = () => {
             rgba(237, 242, 247, 0.85) 70%,
             rgba(237, 242, 247, 0.99) 90%,
             rgba(237, 242, 247, 1) 110%
-        ),url(${data.homesplash.childImageSharp.fluid.src})`,
+        ),url(${data.homesplash.childImageSharp.gatsbyImageData.src})`,
           }}
           className="bg-homepage-splash flex justify-center"
         >
@@ -337,7 +330,7 @@ const IndexPage = () => {
         </section>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default IndexPage

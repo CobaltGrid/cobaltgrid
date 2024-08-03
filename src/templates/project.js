@@ -1,64 +1,53 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Slider from "../components/ui/slider"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import "./project.css"
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        name
-        excerpt
-        tech
-        feature_image {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        slider {
-          childImageSharp {
-            fluid(maxWidth: 1500) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
-        }
-        images {
-          childImageSharp {
-            fluid(maxWidth: 1500) {
-              ...GatsbyImageSharpFluid
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+export const query = graphql`query ($slug: String!) {
+  markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    frontmatter {
+      name
+      excerpt
+      tech
+      feature_image {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED)
         }
       }
-      html
+      slider {
+        childImageSharp {
+          gatsbyImageData(width: 1500, layout: CONSTRAINED)
+        }
+      }
+      images {
+        childImageSharp {
+          gatsbyImageData(width: 1500, layout: CONSTRAINED)
+        }
+      }
     }
+    html
   }
-`
+}`
 
 const Project = ({ data }) => {
   const project = data.markdownRemark
   return (
     <Layout>
-      <SEO title={`${project.frontmatter.name}`} />
+      <Seo title={`${project.frontmatter.name}`} />
       <div className="container">
         <div className="flex flex-wrap -mx2">
           <div className="flex items-center w-full md:w-1/2 px-2">
-            <Image
+            <GatsbyImage
+              image={project.frontmatter.feature_image.childImageSharp.gatsbyImageData}
               imgStyle={{ objectFit: "contain" }}
               style={{ maxWidth: "500px", maxHeight: "200px" }}
               className="my-auto mx-auto w-full"
-              fluid={project.frontmatter.feature_image.childImageSharp.fluid}
-              alt={`${project.frontmatter.name} Feature Image`}
-            />
+              alt={`${project.frontmatter.name} Feature Image`} />
           </div>
           <div className="w-full md:w-1/2">
             <h1>{project.frontmatter.name}</h1>
@@ -104,24 +93,23 @@ const Project = ({ data }) => {
                   >
                     <div className="aspect-ratio-16/9" />
                     <div className="absolute left-0 right-0 w-full my-auto top-0 bottom-0 shadow-lg">
-                      <Image
-                        fluid={image.childImageSharp.fluid}
+                      <GatsbyImage
+                        image={image.childImageSharp.gatsbyImageData}
                         style={{
                           position: "initial",
                           height: "100%",
                           width: "100%",
                         }}
-                        imgStyle={{ objectFit: "contain" }}
-                      />
+                        imgStyle={{ objectFit: "contain" }} />
                     </div>
                   </div>
-                )
+                );
               })}
           </div>
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default Project
