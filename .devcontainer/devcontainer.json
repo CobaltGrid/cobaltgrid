@@ -14,5 +14,6 @@
         "dbaeumer.vscode-eslint"
       ]
     }
-  }
+  },
+  "po"
 }

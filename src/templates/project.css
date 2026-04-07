@@ -7,3 +7,7 @@
 .project-text ul {
   @apply list-disc pl-4
 }
+
+.project-text p {
+  @apply mb-4;
+}

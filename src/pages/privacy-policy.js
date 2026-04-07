@@ -191,7 +191,7 @@ const PrivacyPolicyPage = () => {
             &#115;upport&#64;cobalt&#103;r&#105;d&#46;c&#111;m.
           </p>
         </section>
-        <section className="mt-4">
+        <section className="mt-4 mb-8">
           <h2 className="text-cobalt-bright">Changes to this policy</h2>
           <p>
             We aim to review this policy in-detail each year to ensure it is fit

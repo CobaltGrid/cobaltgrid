@@ -2,10 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Source+Sans+Pro&display=swap");
 
-p {
-  @apply mb-8;
-}
-
 h1 {
   @apply text-5xl font-display mb-2;
 }
