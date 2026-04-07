@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
       <footer className="bg-cobalt-mud text-white py-6">
         <div className="container px-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+          <div className="gap-6 flex flex-wrap justify-between">
             <div>
               <p className="font-display text-sm">
                 &copy; {new Date().getFullYear()} Cobalt Grid Ltd.
