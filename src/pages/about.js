@@ -114,7 +114,7 @@ const About = () => {
             <Link
               to="/contact"
               state={{ topic: "general", body: message }}
-              className="px-4 bg-cobalt-primary h-12 hover:bg-cobalt-mud outline-none animate-pulse"
+              className="px-4 bg-cobalt-primary h-12 hover:bg-cobalt-mud outline-none transition"
               style={{ borderRadius: "3rem", lineHeight: "3rem" }}
             >
               Send

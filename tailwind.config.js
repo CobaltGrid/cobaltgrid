@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ["Alata", "sans-serif"],
-      body: ["Source Sans Pro", "sans-serif"],
+      body: ["Source Sans 3", "sans-serif"],
     },
     container: {
       center: true,

@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ProjectCard from "../components/ui/project-card"
-import Typewriter from "typewriter-effect"
 
 import UserStories from "../misc/UserStories"
 
@@ -16,6 +15,22 @@ import ImageBuildSite from "../images/build_web.svg"
 const IndexPage = () => {
   const [userType, setUserType] = useState("")
   const [userPurpose, setUserPurpose] = useState("")
+
+  const heroWords = ["bespoke websites", "functional applications", "portfolios", "great digital experiences"]
+  const [wordIdx, setWordIdx] = useState(0)
+  const [wordVisible, setWordVisible] = useState(true)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setWordVisible(false)
+      setTimeout(() => {
+        setWordIdx(i => (i + 1) % heroWords.length)
+        setWordVisible(true)
+      }, 450)
+    }, 3500)
+    return () => clearInterval(timer)
+  })
+
   const data = useStaticQuery(graphql`{
   homesplash: file(relativePath: {eq: "home-splash.jpg"}) {
     childImageSharp {
@@ -96,28 +111,16 @@ const IndexPage = () => {
             <div className="flex-grow">
               <h1 className="sm:text-left sm:text-6xl">
                 We make{" "}
-                <div className="text-cobalt-primary">
-                  <Typewriter
-                    options={{
-                      loop: true,
-                    }}
-                    onInit={typewriter => {
-                      typewriter
-                        .typeString("bespoke websites")
-                        .pauseFor(2500)
-                        .deleteAll()
-                        .typeString("functional applications")
-                        .pauseFor(2500)
-                        .deleteAll()
-                        .typeString("portfolios")
-                        .pauseFor(2500)
-                        .deleteAll()
-                        .typeString("great digital experiences")
-                        .pauseFor(2500)
-                        .start()
-                    }}
-                  />
-                </div>
+                <span
+                  className="text-cobalt-primary inline-block"
+                  style={{
+                    transition: "opacity 0.45s ease, transform 0.45s ease",
+                    opacity: wordVisible ? 1 : 0,
+                    transform: wordVisible ? "translateY(0)" : "translateY(-6px)",
+                  }}
+                >
+                  {heroWords[wordIdx]}
+                </span>
               </h1>
               <h3 className="text-cobalt-primary mt-10 mt-16 sm:text-left lg:w-3/4">
                 Cobalt Grid is a web and digital design consultancy, experienced

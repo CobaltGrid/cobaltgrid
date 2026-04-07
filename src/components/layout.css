@@ -1,6 +1,10 @@
 @tailwind base;
 
-@import url("https://fonts.googleapis.com/css2?family=Alata&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Source+Sans+3&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
 
 h1 {
   @apply text-5xl font-display mb-2;
@@ -9,7 +13,7 @@ h2 {
   @apply text-4xl font-display mb-2;
 }
 h3 {
-  @apply text-lg font-display mb-2;
+  @apply text-2xl font-display mb-2;
 }
 
 .list-nav > li {
@@ -32,7 +36,7 @@ h3 {
 
 .btn {
   font-size: 1.125rem;
-  @apply m-1 px-4 py-2 inline-block;
+  @apply m-1 px-5 py-2 inline-block rounded-lg;
 }
 
 .h-lined {
@@ -53,27 +57,27 @@ ul.list-tick li:before {
 }
 
 .project-card {
-  margin: 0 1.5rem 1.5rem 1.5rem;
-  @apply relative;
+  @apply relative rounded-xl overflow-hidden shadow-md;
 }
 
 .project-card .card-title {
-  bottom: -1rem;
-  right: -1rem;
-  @apply text-right bg-cobalt-primary px-4 py-1 absolute text-white rounded-sm;
-}
-
-.project-card .project-details {
-  opacity: 0;
-  transition: 0.5s ease;
+  @apply text-right bg-cobalt-primary px-4 py-2 text-white absolute bottom-0 right-0;
+  border-radius: 0.5rem 0 0 0;
 }
 
 .project-card > a:hover .card-title {
   @apply bg-cobalt-bright;
 }
 
+.project-card .project-details {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .project-card > a:hover .project-details {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .slider .each-slide > div {
@@ -86,27 +90,25 @@ ul.list-tick li:before {
 
 .contact-form input,
 .contact-form select {
-  @apply block bg-blue-600 w-full h-12 px-4 focus:outline-none;
+  @apply block bg-cobalt-primary/20 border border-cobalt-primary/30 w-full h-12 px-4 focus:outline-none focus:border-cobalt-bright rounded;
 }
 
 .contact-form textarea {
-  @apply block bg-blue-600 w-full px-4 pt-4 focus:outline-none;
+  @apply block bg-cobalt-primary/20 border border-cobalt-primary/30 w-full px-4 pt-4 focus:outline-none focus:border-cobalt-bright rounded;
 }
 
 li.tag {
   border-radius: 3px;
   color: white;
   display: inline-block;
-  height: 5
-  35px;
+  height: 35px;
   line-height: 26px;
   padding: 3px 10px 3px 23px;
   position: relative;
   margin: 0 10px 10px 0;
   text-decoration: none;
-  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
 }
-
 
 li.tag::before {
   background: #fff;
